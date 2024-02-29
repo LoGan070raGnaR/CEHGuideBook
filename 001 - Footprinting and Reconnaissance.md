@@ -1,31 +1,30 @@
+# Footprinting and Reconnaissance
 
-> **Footprinting** refers to collecting information about a target network from publicly accessible sources. It involves creating a blueprint or "footprint" of the organization, aiding in the selection of effective attack strategies.
+## Introduction
 
-> **Reconnaissance** is the initial step in any system attack, involving the collection of information to narrow down efforts and choose attack weapons.
+-   **Footprinting** refers to collecting information about a target network from publicly accessible sources. It involves creating a blueprint or "footprint" of the organization, aiding in the selection of effective attack strategies.
 
-- As an ethical hacker in a large organization, your task is to perform a proactive security assessment. Before starting, discuss and define the scope with management and establish rules of engagement (RoE).
+-   **Reconnaissance** is the initial step in any system attack, involving the collection of information to narrow down efforts and choose attack weapons.
+
+As an ethical hacker in a large organization, your task is to perform a proactive security assessment. Before starting, discuss and define the scope with management and establish rules of engagement (RoE).
 
 ## Objective
 
-- Extract information about the target organization, including:
-	> *Organization Information:*
-    -   Employee details, addresses, partner details, weblinks, web technologies, patents, trademarks, etc.
-	> *Network Information:*
-    -   Domains, sub-domains, network blocks, topologies, routers, firewalls, IP addresses, Whois records, DNS records, etc.
-	> *System Information:*
-    -   Operating systems, web server OSes, web server locations, user accounts, passwords, etc.
-	
-	
-## Footprinting
+Extract information about the target organization, including:
+
+- **Organization Information:** Employee details, addresses, partner details, weblinks, web technologies, patents, trademarks, etc.
+- **Network Information:** Domains, sub-domains, network blocks, topologies, routers, firewalls, IP addresses, Whois records, DNS records, etc.
+- **System Information:** Operating systems, web server OSes, web server locations, user accounts, passwords, etc.
+
+## Overview of Footprinting
 
 - **Footprinting** involves collecting information about a target network and its environment to evaluate the security posture. It can be passive or active.
-	> *Passive Footprinting:*
-    -   Gathering information without direct interaction, useful when detection is undesirable.
-	> *Active Footprinting:*
-    -   Gathering information with direct interaction, where the target may recognize the process.
+    - **Passive Footprinting:** Gathering information without direct interaction, useful when detection is undesirable.
+    - **Active Footprinting:** Gathering information with direct interaction, where the target may recognize the process.
 
+## Task
 
--   Ethical hackers use tools and techniques for footprinting:
+Ethical hackers use tools and techniques for footprinting:
 
 ### 1. Perform footprinting through search engines
 
@@ -85,3 +84,5 @@
 - **FOCA**
 - **BillCipher**
 - **OSINT Framework**
+
+---
