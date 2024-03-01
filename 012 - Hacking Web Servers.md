@@ -15,7 +15,7 @@
 
 - Beyond hardware, a web server involves software applications. Clients initiate communication through HTTP requests, and servers respond with the requested information.
 
-## Lab Tasks
+## Tasks
 
 #### 1. Footprint the web server
    - Information gathering using Ghost Eye
@@ -105,7 +105,7 @@
 
 #### Uniscan Web Server Fingerprinting
 
-- Uniscan is a powerful server fingerprinting tool that performs various checks on web servers, including static, dynamic, and stress tests. It also conducts automated searches on Bing and Google using provided IPs and compiles a comprehensive report.
+- [Uniscan](https://www.kali.org/tools/uniscan/) is a powerful server fingerprinting tool that performs various checks on web servers, including static, dynamic, and stress tests. It also conducts automated searches on Bing and Google using provided IPs and compiles a comprehensive report.
 
 ---
 
@@ -126,7 +126,7 @@
 
 - After gathering essential information about the target web server, the ethical hacker or pen tester's next objective is to test the web server's security by launching attacks. The goal is to evaluate the web server's resilience against different attack techniques.
 
-- Attackers may have diverse objectives, ranging from financial gain to sheer curiosity. Techniques employed include password guessing, dictionary attacks, brute force attacks, hybrid attacks, pre-computed hashes, rule-based attacks, distributed network attacks, and rainbow attacks. Automated tools like Brutus and THC-Hydra may also be utilized.
+- Attackers may have diverse objectives, ranging from financial gain to sheer curiosity. Techniques employed include password guessing, dictionary attacks, brute force attacks, hybrid attacks, pre-computed hashes, rule-based attacks, distributed network attacks, and rainbow attacks. Automated tools like Brutus and [THC-Hydra](https://www.kali.org/tools/hydra/) may also be utilized.
 
 #### Crack FTP Credentials using a Dictionary Attack
 
