@@ -681,7 +681,7 @@ In this task, we'll leverage the Metasploit Framework and WPScan to perform targ
 
 **Note:** In this scenario, we'll install a vulnerable application on the Ubuntu machine and use the Parrot Security machine as the host machine to target the application. Ensure that the Parrot Security virtual machine is running.
 
-## Target Machine
+##### Target Machine
 
 1. Install Docker on the Ubuntu machine:
    ```bash
@@ -701,7 +701,7 @@ In this task, we'll leverage the Metasploit Framework and WPScan to perform targ
    ```
    Leave the server running on the Ubuntu machine.
 
-## Attacker Machine
+##### Attacker Machine
 
 4. Switch to the Parrot Security virtual machine.
 5. Open Firefox and navigate to http://10.10.1.9:8080.
