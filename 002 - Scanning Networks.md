@@ -37,24 +37,24 @@
 
 Ethical hackers and pen testers use numerous tools and techniques to scan the target network.
 
-#### 1. Perform Host Discovery
+#### 1. Host Discovery
 
-- **Perform Host Discovery using nmap**
-- **Perform Host Discovery using angry IP Scanner**
+- **Host Discovery using nmap**
+- **Host Discovery using angry IP Scanner**
 
 #### 2. Perform Port and Service Discovery
 
-- **Perform Port and Service Discovery using megaping**
-- **Perform Port and Service Discovery using NetScanTools Pro**
-- **Perform Port Scanning using sx Tool**
+- **Port and Service Discovery using megaping**
+- **Port and Service Discovery using NetScanTools Pro**
+- **Port Scanning using sx Tool**
 - **Explore Various Network Scanning Techniques using Nmap**
 - **Explore Various Network Scanning Techniques using Hping3**
 
 #### 3. Perform OS Discovery
 
 - **Identify the Target System's OS with Time-to-Live (TTL) and TCP Window Sizes using Wireshark**
-- **Perform OS Discovery using Nmap Script Engine (NSE)**
-- **Perform OS Discovery using Unicornscan**
+- **OS Discovery using Nmap Script Engine (NSE)**
+- **OS Discovery using Unicornscan**
 
 #### 4. Scan Beyond IDS and Firewall
 
@@ -69,7 +69,7 @@ Ethical hackers and pen testers use numerous tools and techniques to scan the ta
 - **Scan a Target Network using Metasploit**
 
 ---
-### 1. Perform Host Discovery
+### 1. Host Discovery
 
 - Host discovery is considered the primary task in the network scanning process. It is used to discover the active/live hosts in a network. It provides an accurate status of the systems in the network, which, in turn, reduces the time spent on scanning every port on every system in a sea of IP addresses in order to identify whether the target host is up.
 
@@ -80,7 +80,7 @@ Ethical hackers and pen testers use numerous tools and techniques to scan the ta
     - TCP ping scan (TCP SYN ping and TCP ACK ping)
     - IP protocol ping scan
 
-#### Perform Host Discovery using Nmap
+#### Host Discovery using Nmap
 
 - Nmap is a utility used for network discovery, network administration, and security auditing. It is also used to perform tasks such as network inventory, managing service upgrade schedules, and monitoring host or service uptime. Here, we will use Nmap to discover a list of live hosts in the target network using various host discovery techniques.
 
@@ -106,7 +106,7 @@ Ethical hackers and pen testers use numerous tools and techniques to scan the ta
 - You can also use other ping sweep tools such as [Angry IP Scanner](https://github.com/angryip/ipscan), [SolarWinds Engineer's Toolset](https://www.solarwinds.com), [NetScanTooIs Pro](https://www.netscantools.com), [Colasoft Ping Tool](https://www.colasoft.com), [Visual Ping Tester](http://www.pingtester.net), and [OpUtils](https://www.manageengine.com) to discover active hosts in the target network.
 
 ---
-### 2. Perform Port and Service Discovery
+### 2. Port and Service Discovery
 
 - Port and service discovery is the process of identifying open ports and services running on the target IP addresses/active hosts.
 
@@ -128,7 +128,7 @@ Ethical hackers and pen testers use numerous tools and techniques to scan the ta
 
     - **IPv6 Scanning**
 
-#### Perform Port Scanning using sx Tool
+#### Port Scanning using sx Tool
 
 - The `sx` tool is a command-line network scanner that can be used to perform ARP scans, ICMP scans, TCP SYN scans, UDP scans, and application scans such as SOCS5 scan, Docker scan, and Elasticsearch scan.
 
@@ -253,7 +253,7 @@ Ethical hackers and pen testers use numerous tools and techniques to scan the ta
 | `hping3 -2 [Target IP Address] -p 80 -c 5`                                                                            | UDP scan command: `-2` specifies UDP scan, `-p` specifies port (80), `-c` specifies packet count (5). Result indicates open ports.                                                                               |
 
 ---
-### 3. Perform OS Discovery
+### 3. OS Discovery
 
 - Banner grabbing, or OS fingerprinting, is a crucial step in determining the operating system (OS) running on a remote target system. This information is valuable for assessing system vulnerabilities and planning potential exploits.
 
@@ -305,7 +305,7 @@ Parameters like TTL and TCP window size in the IP header's first packet in a TCP
 
 - **Interpret TTL Values:** A TTL value of 128 suggests a Windows-based machine. A TTL value of 64 suggests a Linux-based machine.
 
-#### Perform OS Discovery using Nmap Script Engine (NSE)
+#### OS Discovery using Nmap Script Engine (NSE)
 
 - Nmap, along with Nmap Script Engine (NSE), is a powerful tool for extracting valuable information from the target system. NSE provides scripts that reveal useful details such as OS, computer name, domain name, and more.
 
@@ -321,7 +321,7 @@ Parameters like TTL and TCP window size in the IP header's first packet in a TCP
 - In summary, the aggressive scan is an all-encompassing scan that provides a wide range of information, the OS discovery scan specifically focuses on identifying the operating system, and the SMB OS discovery utilizes scripts for OS discovery using the SMB protocol.
 
 ---
-#### Perform OS Discovery using Unicornscan
+#### OS Discovery using Unicornscan
 
 - Unicornscan is a Linux-based command line-oriented network information-gathering and reconnaissance tool. It is an asynchronous TCP and UDP port scanner and banner grabber that enables you to discover open ports, services, TTL values, etc. running on the target machine. In Unicornscan, the OS of the target machine can be identified by observing the TTL values in the acquired scan result.
 
@@ -426,7 +426,7 @@ Parameters like TTL and TCP window size in the IP header's first packet in a TCP
 
 - CyberGhost VPN hides the attacker's IP and replaces it with a selected IP, allowing for anonymous surfing and access to blocked content. It encrypts the connection and does not keep logs, ensuring data security.
 
-### 5. Perform Network Scanning using Various Scanning Tools
+### 5. Network Scanning using Various Scanning Tools
 
 - The information obtained in the previous steps might be insufficient to reveal potential vulnerabilities in the target network; there may be more information available that could help in finding loopholes. As an ethical hacker and pen tester, you should look for as much information as possible about systems in the target network using various network scanning tools when needed.
 
