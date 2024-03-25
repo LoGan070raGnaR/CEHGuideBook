@@ -340,10 +340,10 @@
 
 ## Tools
 
-- SQLMap: For finding SQL Injection Vulnerabilities
-- Wpscan: Scanning and finding issues in wordpress websites
-- ADB: For connecting android devices to PC and binay analysis
-- Burpsuite: For analysing and manipulating the traffic
+- `SQLMap`: For finding SQL Injection Vulnerabilities
+- `Wpscan`: Scanning and finding issues in wordpress websites
+- `ADB`: For connecting android devices to PC and binay analysis
+- `Burpsuite`: For analysing and manipulating the traffic
 
 - First download and install DVWA
 
@@ -357,13 +357,13 @@ sqlmap -r <get-request-file> -D dvwa --tables --colums
 sqlmap -r <get-request-file> -D dvwa --dump
 ```
 
-## WPScan
+### WPScan
 
 ```bash
 wpscan --url http://10.10.208.164/ --enumerate u
 ```
 
-## ADB
+### ADB
 
 ```bash
 adb devices
@@ -386,7 +386,7 @@ adb shell
 
 ---
 
-# new topic
+# New Topics
 
 - IoT
 - RATs
@@ -409,17 +409,16 @@ adb shell
 
 # Privilage Escalation
 
-`ssh user-name@<IP> -p <PORT>`
-
-- how to know the user and password?
-	- you will be provided with checklist/wordlist
-	- from previous question you have identified credentils
-	- bruteforce credentials using hydra
+- `ssh user-name@<IP> -p <PORT>`
+	- how to know the user and password?
+		- you will be provided with checklist/wordlist
+		- from previous question you have identified credentils
+		- bruteforce credentials using hydra
 
 - To escalate
 	- always check previlage level
-		- sudo -l
-		- sudo -u user2 /bin/bash
+		- `sudo -l`
+		- `sudo -u user2 /bin/bash`
 
 - Thought process
 	- what are the ways a user can escalte to root user?
@@ -433,7 +432,7 @@ adb shell
 
 - copy the `id_rsa` of root user to your local machine
 - first thing first, update the permission of this specific file - `chmod 600 id_rsa`
-	ssh root@<IP> -p <PORT> -i id_rsa (don't forget to specify the port, sometimes you will get permission error, if you didn't specify the proper port number)
+	- `ssh root@<IP> -p <PORT> -i id_rsa` (don't forget to specify the port, sometimes you will get permission error, if you didn't specify the proper port number)
 
 - another thing to remember
 	- if we have the authority to change 'authorized_keys' of a root user as a normal user (not root user)
@@ -456,22 +455,22 @@ adb shell
 ## File Modes
 
 - The `setuid` and `setgid` bits are normally represented as the values:
-	- 4 for setuid
-	- 2 for setgid
+	- `4` for `setuid`
+	- `2` for `setgid`
 - In the high-order octal digit of the file mode.
 - For e.g., 6711 has both the setuid and setgid bits ( 4 + 2 = 6)
 	- 6: Access rights flags
 	- 7: owner permission
 	- 1: group permission
 	- 1: others permission
-- Note: Read (4) + Write (2) + Execute (1)
+- Note: `Read (4)` + `Write (2)` + `Execute (1)`
 
 ---
 
 - To display file or file system status
 	`stat -c "%a %A  %U %G %F" *`
 
-- To check user in which group
+- To check user is in which group
 	`groups <user-name>`
 
 - Have some thought process.
@@ -491,10 +490,12 @@ adb shell
 - consider it as scenario like you have a shared server, say you are an employee where everyone can share there files are host their website.
 - we know that its a web server, if we want to host something, we generally host it on `/var/www/html` directory
 - lets see if we have any database contents among those files in that directory
-	grep -nr "db_users"
+	- `grep -nr "db_users"`
 - it will list path to possible files which may contains credentials.through which you can escalate the privilage.
 
 ---
+
+#### Tips: 
 
 - use `LinEnum` (https://github.com/rebootuser/LinEnum) or use '`LinPEASE`' (https://github.com/carlospolop/PEASS-ng)
 
