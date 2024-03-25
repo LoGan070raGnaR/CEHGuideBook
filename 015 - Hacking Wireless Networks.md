@@ -16,7 +16,7 @@
 
 Wireless communication at the physical layer leads to fundamental changes. Wireless networks include extensions to wired networks, multiple access points, LAN-to-LAN networks, and 3G/4G hotspots.
 
-## Tasks
+## Methods
 
 #### 1. Footprint a Wireless Network
    - Find Wi-Fi networks using NetSurveyor

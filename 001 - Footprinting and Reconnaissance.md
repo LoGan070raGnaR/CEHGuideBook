@@ -24,27 +24,27 @@ Extract information about the target organization, including:
 
 ## Methods
 
-#### 1. Footprinting through search engines
+#### 1. Perform footprinting through search engines
 
 - Advanced Google Hacking Technique
 - Video Search Engines
 - FTP Search Engines
 - IOT Search Engines
 
-#### 2. Footprinting Through Web Services
+#### 2. Perform Footprinting Through Web Services
 
 - Netcraft: Find the company's domains and sub-domains.
 - PeekYou: Gather personal information.
 - theHarvester: Gather email lists.
 - Deep and Dark Web Searching: Gather information.
 
-#### 3. Footprinting Through Social Networking Sites
+#### 3. Perform Footprinting Through Social Networking Sites
 
 - Linkedln: Gather employee information.
 - Sherlock: Gather personal information from various social networking sites.
 - Followerwonk: Gather information.
 
-#### 4. Website Footprinting
+#### 4. Perform Website Footprinting
 
 - Ping Command Line Utility: Gather information about a target website.
 - Photon: Gather information about a target website.
@@ -54,27 +54,27 @@ Extract information about the target organization, including:
 - GRecon: Gather information about a target website.
 - CeWL: Gather a wordlist from the target website.
 
-#### 5. Email Footprinting
+#### 5. Perform Email Footprinting
 
 - eMailTrackerPro: Trace emails.
 
-#### 6. Whois Footprinting
+#### 6. Perform Whois Footprinting
 
 - DomainTools: Perform Whois lookup.
 
-#### 7. DNS Footprinting
+#### 7. Perform DNS Footprinting
 
 - nslookup Command Line Utility and Online Tool: Gather DNS information.
 - Reverse IP Domain Check and DNSRecon: Perform reverse DNS lookup.
 - SecurityTrails: Gather subdomain and DNS records.
 
-#### 8. Network Footprinting
+#### 8. Perform Network Footprinting
 
 - Locate the Network Range
 - Network Tracerouting in Windows and Linux Machines
 - Path Analyzer Pro: Advanced network route tracing.
 
-#### 9. Footprinting using Various Tools
+#### 9. Perform Footprinting using Various Tools
 
 - Recon-ng
 - Maltego
@@ -84,7 +84,7 @@ Extract information about the target organization, including:
 - OSINT Framework
 
 ---
-### 1. Footprinting through search engines
+### 1. Perform footprinting through search engines
 
 - Search engines serve as primary information sources to extract critical details about a target organization from the internet.
 
@@ -113,7 +113,7 @@ Extract information about the target organization, including:
     - `location: GitHub`: Find information for a specific location related to GitHub.
 
 ---
-### 2. Footprinting Through Web Services
+### 2. Perform Footprinting Through Web Services
 
 - Web services offer a wealth of publicly accessible information that can be exploited during the footprinting phase. Extracting critical details about a target organization, such as domains, sub-domains, operating systems, geographic locations, employee details, emails, financial information, and hidden web content, is essential for planning ethical hacking strategies.
 
@@ -240,7 +240,7 @@ Extract information about the target organization, including:
 - Additionally, tools such as Hootsuite (https://www.hootsuite.com), Meltwater (https://www.meltwater.com), etc., can be used to gather more information related to the target company and its employees from social networking sites.
 
 ---
-### 4. Website Footprinting
+### 4. Perform Website Footprinting
 
 - Website footprinting involves the collection of information about a target organization's website. This technique provides sensitive details associated with the website, including domain owner information, domain names, hosting details, operating system details, IP addresses, registrar details, emails, filenames, etc.
 
@@ -274,7 +274,7 @@ Extract information about the target organization, including:
     - Continue experimenting with different TTL values until you find the hop count to reach the target.
 
     ```bash
-    ping www.certifiedhacker.com -i 2 -n 1
+    ping github.com -i 2 -n 1
     ```
 
     - Find the hop count by adjusting the TTL value
@@ -349,7 +349,7 @@ Extract information about the target organization, including:
 - This wordlist can be used further to perform brute-force attacks against the previously obtained emails of the target organization's employees.
 
 ---
-### 5. Email Footprinting
+### 5. Perform Email Footprinting
 
 - E-mail footprinting, or tracking, is a method to monitor or spy on email delivered to the intended recipient. This kind of tracking is possible through digitally time-stamped records that reveal the time and date when the target receives and opens a specific email.
 
@@ -372,7 +372,7 @@ Extract information about the target organization, including:
 - You can also use email tracking tools such as [Infoga](https://github.com/The404Hacking/Infoga), [Mailtrack](https://mailtrack.io), etc. to track an email and extract target information such as sender identity, mail server, sender's IP address, location, etc.
 
 ---
-### 6. Whois Footprinting
+### 6. Perform Whois Footprinting
 
 - Whois lookup provides valuable information about a target, including details such as the owner, registrar, registration information, name servers, IP address, and more.
 
@@ -387,7 +387,7 @@ Extract information about the target organization, including:
 - The Whois lookup revealed essential information about the target, providing insights into the domain's registration, ownership, and technical details. This data is crucial for mapping the organization's network, executing social engineering attacks, and obtaining internal network details. Additionally, other Whois lookup tools such as SmartWhois and Batch IP Converter can be explored for additional information extraction.
 
 ---
-### 7. DNS Footprinting
+### 7. Perform DNS Footprinting
 
 - DNS, or Domain Name System, footprinting reveals information about DNS zone data.
 
@@ -439,7 +439,7 @@ Extract information about the target organization, including:
 
 - Additionally you can use DNSChecker and DNSdumpster for DNS footprinting.
 
-### 8. Network Footprinting
+### 8. Perform Network Footprinting
 
 - Network footprinting is a crucial step in gathering network-related information about a target organization. As a professional ethical hacker, the objective is to collect data such as network range, traceroute details, TTL values, etc., to create a comprehensive map of the target network. This information serves as a foundation for understanding the network structure and is instrumental in planning and executing advanced attacks.
 

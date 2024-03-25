@@ -13,7 +13,7 @@ To explore encryption techniques, including generating hashes, calculating encry
 - **Symmetric Encryption:** Uses the same key for both encryption and decryption.
 - **Asymmetric Encryption:** Utilizes different keys for encryption and decryption, known as public and private keys.
 
-## Tasks
+## Methods
 
 #### 1. Encrypt Information
 - Calculate One-Way Hashes using HashCalc
@@ -48,7 +48,7 @@ To explore encryption techniques, including generating hashes, calculating encry
 
 #### Calculate One-way Hashes using HashCalc
 
-- Hash functions play a crucial role in computing unique fixed-size bit string representations, known as message digests. These message digests, or one-way hashes, distill the information in a file into a fixed-length number, making it nearly impossible to find another file with the same hash value. HashCalc is a tool that supports various hash functions, including MD2, MD4, MD5, SHA1, SHA2 (SHA256, SHA384, SHA512), RIPEMD160, PANAMA, TIGER, CRC32, ADLER32, and those used in eDonkey and eMule.
+- Hash functions play a crucial role in computing unique fixed-size bit string representations, known as message digests. These message digests, or one-way hashes, distill the information in a file into a fixed-length number, making it nearly impossible to find another file with the same hash value. [HashCalc](https://sourceforge.net/projects/hashcalc/) is a tool that supports various hash functions, including MD2, MD4, MD5, SHA1, SHA2 (SHA256, SHA384, SHA512), RIPEMD160, PANAMA, TIGER, CRC32, ADLER32, and those used in eDonkey and eMule.
 
 1. Open HashCalc
    - Click the Search icon on the Desktop, type HashCalc, and open the application.
@@ -121,7 +121,7 @@ Note: In real-world scenarios, hash values are shared along with files to verify
    - Click the Refresh icon ( ) to view the selected hash functions.
 
 Note: You can also use other MD5 and MD6 hash calculators such as [MD6 Hash Generator](https://www.browserling.com), [All Hash Generator](https://www.browserling.com), [MD6 Hash Generator](https://convert-tool.com), and [md5 hash calculator](https://onlinehashtools.com) to calculate MD5 and MD6 hashes.
-**Conclusion:** This lab provides hands-on experience in calculating MD5 hashes with HashMyFiles, emphasizing its integration with Windows Explorer and customization features.
+**Conclusion:** This task provides hands-on experience in calculating MD5 hashes with HashMyFiles, emphasizing its integration with Windows Explorer and customization features.
 
 #### Perform File and Text Message Encryption using CryptoForge
 
@@ -164,173 +164,3 @@ Note: You can also use other MD5 and MD6 hash calculators such as [MD6 Hash Gene
 
 7. The message will be decrypted and displayed.
 
----
-
-#### Encrypt and Decrypt Data using BCTextEncoder
-
-**Data Encryption**
-
-- Download and install BCTextEncoder
-
-- To encrypt text:
-   - Copy the text you want to encrypt to the clipboard (Ctrl+V).
-   - Ensure the password option is selected in the Encode by field.
-   - Click Encode. Enter password pop-up appears. Enter the password (e.g., test@123).
-
-- BCTextEncoder encodes the text and displays it in the Encoded text section.
-
-**Data Decryption**
-
-- To decrypt data:
-   - Clear the Decoded plain text in the clipboard.
-   - Click Decode. Enter password for encoding text dialog-box appears. Insert the password (test@123).
-
-- The decoded plain text appears in the Decoded plain text section.
-
-Other cryptography tools like [AxCrypt](https://www.axcrypt.net), [Microsoft Cryptography Tools](https://docs.microsoft.com), and [Concealer](https://www.belightsoft.com) can also be used for data encryption.
-
----
-
-### 2. Perform Disk Encryption
-
-- Disk encryption is a crucial technology that ensures the confidentiality of stored data by converting it into an unreadable code. This prevents unauthorized access to sensitive information. As an ethical hacker or pen tester, it is essential to perform disk encryption to secure data and prevent unauthorized users from accessing it.
-
-- Disk encryption technology protects data confidentiality by converting it into an unreadable code, making it inaccessible to unauthorized users.
-
-- Disk encryption is particularly useful when sending sensitive information through email or preventing real-time exchange of information from potential threats. Encrypted information minimizes the risk of data compromise, requiring attackers to decrypt the message for access. Additionally, encryption software on a user's system enhances overall system security. It is recommended to install encryption software on systems holding valuable information or those exposed to unlimited data transfer.
-
-#### Perform Disk Encryption using VeraCrypt
-
-- VeraCrypt is a powerful tool for on-the-fly disk encryption, ensuring that data is automatically encrypted and decrypted without user intervention.
-
-##### Steps
-
-- Launch VeraCrypt:
-
-- Create VeraCrypt Volume:
-   - Click the "Create Volume" button.
-   - In the Volume Creation Wizard, select "Create an encrypted file container" and click Next.
-
-- Volume Configuration:
-   - Keep default settings in the Volume Type wizard and click Next.
-   - Specify the path (e.g., Desktop) and file name (MyVolume).
-   - Click Save and then Next.
-
-- Encryption Settings:
-   - Keep default settings in the Encryption Options wizard and click Next.
-
-- Volume Size:
-   - Choose MB as the unit and set the size to 5.
-   - Click Next.
-
-- Set Volume Password:
-   - Enter a strong password, e.g., qwerty@123.
-   - Click Next.
-
-- Format Volume:
-   - Choose FAT as the filesystem and Default as the cluster.
-   - Check checkboxes under Random Pool, Header Key, and Master Key.
-   - Move the mouse randomly for 30 seconds.
-   - Click Format.
-
-- Volume Creation:
-   - Wait for the volume creation to complete.
-   - Click OK when prompted.
-
-- Mount VeraCrypt Volume:
-    - Select a drive (e.g., I:) in VeraCrypt and click Select File.
-    - Choose MyVolume on Desktop and click Open.
-    - Click Mount.
-
-- Enter Password:
-    - Type the password (qwerty@123) and click OK.
-
-- Mounting Successful:
-    - Verify that MyVolume is mounted on the drive (e.g., I: drive).
-
-- Copy Files to Encrypted Volume:
-    - Create a text file named "Test" on Desktop.
-    - Open the file, insert text, and save.
-    - Copy the file to the mounted VeraCrypt volume (I:).
-
-- Unmount VeraCrypt Volume:
-    - In VeraCrypt, click Dismount and then Exit.
-
-- Verification:
-    - Check that the I: drive in This PC disappears.
-
----
-
-### 3. Perform Cryptanalysis using Various Cryptanalysis Tools
-
-- Cryptanalysis is the study of ciphers, cipher text, or cryptosystems with the aim of identifying vulnerabilities that allow the extraction of plaintext from ciphertext, even without knowledge of the cryptographic key or algorithm used for encryption.
-
-**Overview of Cryptanalysis**
-
-Cryptanalysis involves various methods, including:
-
----
-
-| Cryptanalysis Method        | Description                                                                                              |
-|-----------------------------|----------------------------------------------------------------------------------------------------------|
-| Linear Cryptanalysis         | A known plaintext attack that uses linear approximation to describe the behavior of a block cipher.       |
-| Differential Cryptanalysis   | Examining differences in input and how they affect differences in output.                                  |
-| Integral Cryptanalysis       | Effective against block ciphers based on substitution-permutation networks, extending from differential cryptanalysis. |
-
----
-
-#### Perform Cryptanalysis using CrypTool
-
-- CrypTool is a versatile freeware program designed for applying and analyzing cryptographic mechanisms.
-
-## Steps
-
-- open CrypTool
-
-- Initialize CrypTool:
-   - Click File in the menu bar and select New to create encrypted data.
-   - Insert text into the Unnamed1 notepad.
-
-- Encrypt Using RC2:
-   - Click Encrypt/Decrypt > Symmetric (modern) RC2...
-   - In the Key Entry: RC2 dialog, keep default Key length (8 bits).
-   - Enter "05" as hexadecimal characters in the key field.
-   - Click Encrypt.
-
-- Save Encrypted File:
-   - Click File and select Save.
-   - Choose a save location (e.g., Desktop) and click Save.
-
-- Send Encrypted File:
-   - Send the file (e.g., Cry-RC2-Unnamed1.hex) to the intended person.
-
-- Decrypt Using CrypTool:
-   - Launch CrypTool, click File > Open.
-   - Select the encrypted file (Cry-RC2-Unnamed1.hex) and click Open.
-   - Click Encrypt/Decrypt > Symmetric (modern) RC2...
-   - Enter the key ("05") and click Decrypt.
-
-- Encrypt Using Triple DES:
-   - Close the Cry-RC2-Unnamed1.hex window, leaving the Unnamed1 notepad open.
-   - Click Encrypt/Decrypt > Symmetric (modern) Triple DES (ECB)...
-   - In the Key Entry: Triple DES (ECB) dialog, keep default Key length (128 bits).
-   - Enter "12" as hexadecimal characters in the key field.
-   - Click Encrypt.
-
-- Save Triple DES Encrypted File:
-   - Click File > Save.
-   - Choose a save location (e.g., Desktop) and click Save.
-
-- Send Triple DES Encrypted File:
-   - Send the file (e.g., Cry-Triple-Unnamed1.hex) to the intended person.
-
-- Decrypt Using CrypTool:
-    - Launch CrypTool, click File > Open.
-    - Select the encrypted file (Cry-Triple-Unnamed1.hex) and click Open.
-    - Click Encrypt/Decrypt > Symmetric (modern) Triple DES (ECB)...
-    - Enter the key ("12") and click Decrypt.
-
-**Explore Other Cryptanalysis Tools:**
-   - Consider using tools like [Cryptosense](https://cryptosense.com), [RsaCtfTool](https://github.com), [Msieve](https://sourceforge.net), and [Cryptol](https://cryptol.net) for further cryptanalysis.
-
----

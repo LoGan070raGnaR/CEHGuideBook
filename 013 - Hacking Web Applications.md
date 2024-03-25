@@ -69,18 +69,18 @@
      - Use tools like [Netcraft](https://www.netcraft.com), [SmartWhois](https://www.tamos.com), [WHOIS Lookup](https://whois.domaintools.com), and [Batch IP Converter](http://www.sabsoft.com).
      - Example Command:
        ```bash
-       whois www.moviescope.com
+       whois github.com
        ```
 
 - **DNS Interrogation:**
    - Use tools such as [DNSRecon](https://github.com), [DNS Records](https://networktools.com), and [Domain Dossier](https://centralops.net) to gather information about DNS servers, records, and server types used by the target organization.
      - Example Command (using DNSRecon):
        ```bash
-       dnsrecon -d www.moviescope.com
+       dnsrecon -d github.com
        ```
      - Example Command (using Domain Dossier):
        ```bash
-       domain-dossier www.moviescope.com
+       domain-dossier github.com
        ```
 
 - **Port Scanning:**
@@ -88,14 +88,14 @@
      ```bash
      sudo su
      cd
-     nmap -T4 -A -v www.moviescope.com
+     nmap -T4 -A -v github.com
      ```
    - Examine the results for open ports and services.
 
 - **Banner Grabbing:**
    - Establish a telnet connection to the target web server to identify the make, model, and version.
      ```bash
-     telnet www.moviescope.com 80
+     telnet github.com 80
      ```
    - Send the GET / HTTP/1.0 command to retrieve banner information.
 
@@ -108,23 +108,23 @@
 
 - Type `whatweb` to display a list of commands available with WhatWeb.
 
-- Type `whatweb [Target Web Application]` (here, the target web application is www.moviescope.com) to perform website footprinting. The result appears, displaying the MovieScope website infrastructure.
+- Type `whatweb [Target Web Application]` (here, the target web application is github.com) to perform website footprinting. The result appears, displaying the GitHub website infrastructure.
 
-- Type `whatweb -v [Target Web Application]` (here, the target web application is www.moviescope.com) to run a verbosity scan. The result appears, displaying a detailed report on the target website, including its IP address, plugin information, and HTTP header information.
+- Type `whatweb -v [Target Web Application]` (here, the target web application is github.com) to run a verbosity scan. The result appears, displaying a detailed report on the target website, including its IP address, plugin information, and HTTP header information.
 
     ```bash
-    whatweb -v www.moviescope.com
+    whatweb -v github.com
     ```
 
-- Type `whatweb --log-verbose=MovieScope_Report www.moviescope.com` and press Enter to export the results as a text file named MovieScope_Report in the root folder.
+- Type `whatweb --log-verbose=GitHub_Report github.com` and press Enter to export the results as a text file named GitHub_Report in the root folder.
 
-- The MovieScope_Report text file contains detailed reconnaissance information.
+- The GitHub_Report text file contains detailed reconnaissance information.
 
 
     **MovieScope_Report:**
 
     ```plaintext
-    #whatweb --log-verbose=MovieScope_Report www.moviescope.com
+    #whatweb --log-verbose=GitHub_Report github.com
     ASP.NET [4.0.30319], Country[RESERVED], HTTPServer[Microsoft-IIS/10.0], IP[10.10.1.19], Meta-Author[EC-Council], Microsoft-IIS[10.0], Modernizr, PasswordField[txtpwd], Script, Title[Login - MovieScope], X-Powered-By[ASP.NET]
     ```
 
@@ -138,7 +138,7 @@
 
 - The OWASP ZAP main window appears. Under the Quick Start tab, click Automated Scan.
 
-- In the Automated Scan wizard, enter the target website (www.moviescope.com) under the URL to attack field and click Attack.
+- In the Automated Scan wizard, enter the target website (github.com) under the URL to attack field and click Attack.
 
 - OWASP ZAP starts scanning the target website; observe URLs under the Spider tab.
 
@@ -173,13 +173,13 @@ Load balancers are integral for distributing web server load across multiple ser
 - Identifying web server directories using Nmap, Gobuster, and Dirsearch.
 ---
 
-| Identification Tool                      | Command                                                         | Description                                                                                                    |
-|-------------------------------------------|-----------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
-| Nmap                                      | `nmap -sv --script=http-enum www.moviescope.com`               | Identify open ports, services, and versions. Observe identified web server directories under http-enum section. |
-| Gobuster                                  | `gobuster dir -u www.moviescope.com -w common.txt`             | Brute-force directories. Observe identified web server directories.                                            |
-| Dirsearch                                 | `dirsearch -u http://www.moviescope.com`                       | Perform directory brute-forcing. Observe listed directories and files.                                         |
-| Dirsearch (specific file extension)        | `dirsearch -u http://www.moviescope.com -e aspx`               | Perform directory brute-forcing on a specific file extension.                                                    |
-| Dirsearch (exclude status code 403)        | `dirsearch -u http://www.moviescope.com -x 403`               | Perform directory brute-forcing excluding status code 403.                                                      |
+| Identification Tool                 | Command                                    | Description                                                                                                     |
+| ----------------------------------- | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| Nmap                                | `nmap -sv --script=http-enum github.com`   | Identify open ports, services, and versions. Observe identified web server directories under http-enum section. |
+| Gobuster                            | `gobuster dir -u github.com -w common.txt` | Brute-force directories. Observe identified web server directories.                                             |
+| Dirsearch                           | `dirsearch -u http://github.com`           | Perform directory brute-forcing. Observe listed directories and files.                                          |
+| Dirsearch (specific file extension) | `dirsearch -u http://github.com -e aspx`   | Perform directory brute-forcing on a specific file extension.                                                   |
+| Dirsearch (exclude status code 403) | `dirsearch -u http://github.com -x 403`    | Perform directory brute-forcing excluding status code 403.                                                      |
 
 ---
 
@@ -190,7 +190,7 @@ Load balancers are integral for distributing web server load across multiple ser
 
 - Create a file named `domain.txt` with the target website link by running:
     ```bash
-    echo "http://www.moviescope.com" | tee domain.txt
+    echo "http://github.com" | tee domain.txt
     ```
 
 - Start the clickjacking vulnerability scan using:
@@ -198,7 +198,7 @@ Load balancers are integral for distributing web server load across multiple ser
     python3 clickJackPoc.py -f domain.txt
     ```
 
-- View the scan result indicating clickjacking vulnerability. open `www.moviescope.com.html` with Browser and confirm clickjacking vulnerability.
+- View the scan result indicating clickjacking vulnerability. open `github.com.html` with Browser and confirm clickjacking vulnerability.
 
 ### 2. Perform Web Application Attacks
 
@@ -357,7 +357,7 @@ This task demonstrates the execution of a Cross-site Request Forgery (CSRF) atta
 
 ##### WordPress Website Configuration:
 
-3. Open Firefox and navigate to the victim WordPress website: [http://10.10.1.22:8080/CEH/wp-login.php](http://10.10.1.22:8080/CEH/wp-login.php).
+3. Open Firefox and navigate to the victim WordPress website: e.g., [http://10.10.1.22:8080/CEH/wp-login.php](http://10.10.1.22:8080/CEH/wp-login.php).
 
 4. Log in with the credentials 'admin' and 'qwerty@123' (obtained in the previous task).
 

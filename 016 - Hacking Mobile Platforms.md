@@ -21,7 +21,7 @@ The primary objective is to conduct ethical hacking on mobile platforms, specifi
 - Smartphones, widely used for personal and business purposes, are treasure troves for attackers seeking corporate or personal data. Security threats to mobile devices have surged with increased internet connectivity, diverse applications, and communication methods.
 
 
-## Tasks
+## Methods
 
 #### 1. Hack Android Devices
    - Create a binary payload to hack an Android device
@@ -130,7 +130,7 @@ The [Social-Engineer Toolkit (SET)](https://github.com/trustedsec/social-enginee
   - In the terminal, observe captured credentials.
 
 
-# Exploit the Android Platform through ADB using PhoneSploit
+#### Exploit the Android Platform through ADB using PhoneSploit
 
 - Android Debug Bridge (ADB) is a versatile command-line tool that lets you communicate with a device. ADB facilitates a variety of device actions such as installing and debugging apps, and provides access to a Unix shell that you can use to run several different commands on a device.
 
@@ -173,7 +173,7 @@ The [Social-Engineer Toolkit (SET)](https://github.com/trustedsec/social-enginee
   - Experiment with additional options such as `Install an apk`, `Screen record`, `Turn The Device off`, and `Uninstall an app`.
 
 
-# Hack an Android Device by Creating APK File using AndroRAT
+#### Hack an Android Device by Creating APK File using AndroRAT
 
 [AndroRAT](https://github.com/karma9874/AndroRAT) is a tool designed to give control of an Android system to a remote user and to retrieve information from it. AndroRAT is a client/server application developed in Java Android for the client side, and the Server is in Python. AndroRAT provides a fully persistent backdoor to the target device, as the app starts automatically on device boot up. It also obtains the current location, sim card details, IP address, and MAC address of the device.
 

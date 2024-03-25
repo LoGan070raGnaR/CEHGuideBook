@@ -23,7 +23,7 @@ The objective is to employ social engineering techniques to:
     - Complex organizational structure
     - Non-existent or inadequate security policies
 
-## Tools
+## Methods
 
 #### 1. Perform Social Engineering
 - Utilize social-engineering toolkit to sniff user credentials.

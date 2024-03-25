@@ -27,7 +27,7 @@ Sniffing is straightforward in hub-based networks, but most networks today work 
 
 - Searches for traffic on a switched LAN by injecting traffic into the LAN.
 
-## Tasks
+## Methods
 
 #### 1. Active Sniffing
 

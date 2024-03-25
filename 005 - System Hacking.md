@@ -16,9 +16,9 @@ System hacking follows a methodology involving four main steps:
 3. **Maintaining Access:** Performing malicious activities while maintaining access.
 4. **Clearing Logs:** Wiping out entries corresponding to malicious activities to avoid detection.
 
-### Tools
+## Methods
 
-#### Gain Access to the System:
+#### 1. Gain Access to the System:
    - Perform Active Online Attack to Crack the System's Password using Responder.
    - Audit System Passwords using LOphtCrack.
    - Find Vulnerabilities on Exploit Sites.
@@ -27,7 +27,7 @@ System hacking follows a methodology involving four main steps:
    - Gain Access to a Remote System using Ninja Jonin.
    - Perform Buffer Overflow Attack to Gain Access to a Remote System.
 
-#### Privilege Escalation to Gain Higher Privileges:
+#### 2. Privilege Escalation to Gain Higher Privileges:
    - Escalate Privileges using Privilege Escalation Tools and Exploit Client-Side Vulnerabilities.
    - Hack a Windows Machine using Metasploit and Perform Post-Exploitation using Meterpreter.
    - Escalate Privileges by Exploiting Vulnerability in pkexec.
@@ -35,7 +35,7 @@ System hacking follows a methodology involving four main steps:
    - Escalate Privileges by Bypassing UAC and Exploiting Sticky Keys.
    - Escalate Privileges to Gather Hashdump using Mimikatz.
 
-#### Maintain Remote Access and Hide Malicious Activities:
+#### 3. Maintain Remote Access and Hide Malicious Activities:
    - User System Monitoring and Surveillance using Power Spy.
    - User System Monitoring and Surveillance using Spytech SpyAgent.
    - Hide Files using NTFS Streams.
@@ -46,7 +46,7 @@ System hacking follows a methodology involving four main steps:
    - Privilege Escalation and Maintain Persistence using WMI.
    - Covert Channels using Covert_TCP.
 
-#### Clear Logs to Hide the Evidence of Compromise:
+#### 4. Clear Logs to Hide the Evidence of Compromise:
    - View, Enable, and Clear Audit Policies using Auditpol.
    - Clear Windows Machine Logs using Various Utilities.
    - Clear Linux Machine Logs using the BASH Shell.
@@ -79,7 +79,7 @@ System hacking follows a methodology involving four main steps:
 
 - LLMNR (Link Local Multicast Name Resolution) and NBT-NS (NetBIOS Name Service) play crucial roles in Windows OSes for name resolution on the same link. These services, enabled by default in Windows OSes, can be exploited to extract password hashes from a user.
 
-- Responder is an LLMNR, NBT-NS, and MDNS poisoner. It responds to specific NBT-NS queries, primarily for the File Server Service (SMB). We can utilize Responder to extract information like the target system's OS version, client version, NTLM client IP address, and NTLM username/password hash.
+- [Responder](https://github.com/SpiderLabs/Responder) is an LLMNR, NBT-NS, and MDNS poisoner. It responds to specific NBT-NS queries, primarily for the File Server Service (SMB). We can utilize Responder to extract information like the target system's OS version, client version, NTLM client IP address, and NTLM username/password hash.
 
 ##### Steps
 
@@ -93,11 +93,12 @@ System hacking follows a methodology involving four main steps:
 
    ```bash
    sudo ./Responder.py -I ens3
+   sudo ./Responder.py -I ens3 -wF -v
    ```
 
-   *Note: Interface may vary; check with `ifconfig`.*
+   *Note: Interface may vary; check with `ifconfig`. and also refer this article: [LLMNR & NBT-NS Poisoning and Credential Access using Responder](https://www.cynet.com/attack-techniques-hands-on/llmnr-nbt-ns-poisoning-and-credential-access-using-responder/)*
 
-- On victim machine, open the Run window (Win + R) and enter `\\Attacker-Tools`.
+- On victim machine, open the Run window (Win + R) and enter  e.g., `\\Attacker-Tools`.
 
 - Observe Responder capturing access logs on attacker machine.
 
@@ -179,12 +180,12 @@ Attackers leverage client-side vulnerabilities to gain access to target machines
    exploit
    ```
 
-- Access Malicious File on Windows:
+- Access Malicious File on victim windows machine:
    - Open the web browser and navigate to http://10.10.1.13/share.
    - Download the Test.exe file.
 
 - Run Exploit:
-   - Double-click Test.exe on Windows 11.
+   - Double-click Test.exe on victim machine.
 
 - Verify Access:
    - Observe Meterpreter session.
@@ -218,9 +219,8 @@ Here, we exploited client-side vulnerabilities and established a VNC session usi
 
 #### Gain Access to a Remote System using Armitage
 
-- Armitage is a scriptable red team collaboration tool for Metasploit that visualizes targets, recommends exploits, and exposes the advanced post-exploitation features in the framework. Using this tool, you can create sessions, share hosts, capture data, downloaded files, communicate through a shared event log, and run bots to automate pen testing tasks.
-
-Certainly, here is the modified list without ** and using "-" instead of numbering:
+- [Armitage](https://github.com/r00t0v3rr1d3/armitage) is a scriptable red team collaboration tool for Metasploit that visualizes targets, recommends exploits, and exposes the advanced post-exploitation features in the framework. Using this tool, you can create sessions, share hosts, capture data, downloaded files, communicate through a shared event log, and run bots to automate pen testing tasks.
+##### Steps
 
 - In the Terminal window, type `service postgresql start` and press Enter to start the database service.
 - Navigate to `Applications -> Pentesting Exploitation Tools -> Metasploit Framework -> Armitage` to launch the Armitage tool.
@@ -294,8 +294,6 @@ Certainly, here is the modified list without ** and using "-" instead of numberi
 ---
 
 #### Escalate Privileges using Privilege Escalation Tools and Exploit Client-Side Vulnerabilities
-
-Certainly, here is the modified content without ** and using "-" instead of numbering:
 
 ##### Privilege Escalation with Meterpreter
 
@@ -786,9 +784,7 @@ Remote code execution techniques are often performed after initially compromisin
 ---
 #### Hide Files using NTFS Streams
 
-## Steps
-
-Certainly! Here is the content with "-" instead of numbering:
+##### Steps
 
 Check and verify that the `C:` drive is in NTFS format: Right-click on Local Disk (`C:`) in This PC, and click Properties.
 
@@ -840,7 +836,19 @@ Check and verify that the `C:` drive is in NTFS format: Right-click on Local Dis
 
 ---
 
-# Image Steganography using StegOnline
+#### OpenStego Image Steganography
+
+**In OpenStego:**
+
+- Click the ellipsis button next to Message File, select `New Text Document.txt` in `C:\OpenStego`, and click Open.
+- Click the ellipsis button next to Cover File, select e.g., `Island.jpg`, and click Open.
+- Click the ellipsis button next to Output Stego File, choose Desktop as the location, provide the file name as `Stego`, and click Open.
+- Click Hide Data, and after successful embedding, minimize OpenStego.
+- Double-click `Stego.bmp` on the Desktop to view the image with hidden text.
+- Switch back to OpenStego, click Extract Data, select `Stego.bmp` as the Input Stego File, choose Desktop as the Output Folder, and click Extract Data.
+- View the extracted text file (`New Text Document.txt`) on the Desktop.
+
+#### StegOnline Image Steganography
 
 - Go to `https://stegonline.georgeom.net/upload`.
 - Upload `image.jpg`
@@ -861,7 +869,7 @@ Check and verify that the `C:` drive is in NTFS format: Right-click on Local Dis
 
 Here, we will exploit a misconfigured startup folder to gain privileged access and maintain persistence on the target machine.
 
-## Steps
+##### Steps
 
 **Setup and Initial Payload:**
 
@@ -1039,7 +1047,7 @@ Here, we will exploit a misconfigured startup folder to gain privileged access a
 
 - WMI (Windows Management Instrumentation) event subscription can be utilized for installing event filters, providers, and bindings that execute code when specific events occur. Here, we are exploiting WMI event subscription to gain persistent access to the target system.
 
-## Steps
+##### Steps
 
 - In the terminal, run the following commands:
     ```bash
@@ -1192,7 +1200,7 @@ lets consider two machines (one Parrot and one Ubuntu)
 
 - Auditpol.exe is a command-line utility tool used to modify Audit Security settings at the category and sub-category levels.
 
-## Steps
+##### Steps
 
 - View Audit Policies:
    - In the Command Prompt with Administrator privileges, type:
@@ -1234,7 +1242,7 @@ lets consider two machines (one Parrot and one Ubuntu)
 
 - The system log files on a Windows machine store crucial information about events, changes, and operations. Here, we use different utilities to clear these logs, maintaining a level of anonymity on the target system.
 
-## Steps
+##### Steps
 
 - **Utilize Clear_Event_Viewer_Logs.bat:**
     - Download and Run [Clear_Event_Viewer_Logs.bat](https://www.tenforums.com/attachments/tutorials/197097d1532546562-clear-all-event-logs-event-viewer-windows-clear_event_viewer_logs.bat).
@@ -1264,7 +1272,7 @@ Here we used various utilities (Clear_Event_Viewer_Logs.bat, wevtutil, and Ciphe
 
 - The BASH (Bourne Again Shell) stores command history in a file, posing a potential risk for attackers. Here we use the BASH shell to clear Linux machine logs, preventing investigators from tracking the attack's origin and understanding the commands used.
 
-## Steps
+##### Steps
 
 - Disable BASH History:
     - In the Terminal window, type:
@@ -1340,7 +1348,7 @@ Here we used various utilities (Clear_Event_Viewer_Logs.bat, wevtutil, and Ciphe
 
 - This is the process of hiding directories and user accounts in a Windows environment.
 
-## Linux Machine
+##### Linux Machine
 
 - **Create and Hide Files:**
     - Type:

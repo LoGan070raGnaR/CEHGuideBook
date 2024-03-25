@@ -18,7 +18,7 @@
     - Gain remote access
     - Maintain access
 
-## Tasks
+## Methods
 
 #### 1.Perform Footprinting
 

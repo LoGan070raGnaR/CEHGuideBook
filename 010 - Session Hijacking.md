@@ -8,7 +8,7 @@
 
 - Application-level hijacking involves gaining control over HTTP user sessions, while network-level hijacking is mitigated by packet encryption using protocols like IPsec, SSL, and SSH.
 
-### Objectives
+## Objectives
 
 - Hijack a session by intercepting traffic between the server and client.
 - Steal a user session ID by intercepting traffic.
@@ -21,7 +21,7 @@
     - **Active Session Hijacking**: An attacker takes over an active session.
     - **Passive Session Hijacking**: An attacker monitors and records traffic in a session without taking control.
 
-## Tools
+## Methods
 
 #### 1. Session Hijacking
 - Hijack a session using Zed Attack Proxy (ZAP)

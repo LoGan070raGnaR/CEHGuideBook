@@ -21,7 +21,7 @@
 
 - Cloud computing refers to on-demand delivery of IT capabilities, in which IT infrastructure and applications are provided to subscribers as metered services over a network. Cloud services are classified into three categories, namely infrastructure-as-a-service (IaaS), platform-as-a-service (PaaS), and software-as-a-service (SaaS), which offer different techniques for developing cloud.
 
-## Tasks
+## Methods
 
 Ethical hackers or pen testers use numerous tools and techniques to hack the target cloud platform. Recommended labs that will assist you in learning various cloud platform hacking techniques include:
 
@@ -72,9 +72,9 @@ Enumeration tools are used to collect detailed information about target systems 
    ```
 
 -  Run S3Scanner to Find Open S3 Buckets
-```bash
-python3 ./s3scanner.py sites.txt
-```
+	```bash
+	python3 ./s3scanner.py sites.txt
+	```
 - Replace `sites.txt` with the target website URL.
 
 - Dump all open buckets, log both open and closed buckets:
@@ -144,8 +144,6 @@ python3 ./s3scanner.py sites.txt
 #### Exploit open S3 Buckets using AWS CLI
 
 - The AWS Command Line Interface (CLI) is a powerful tool for managing AWS services.
-
-Certainly! Here's the reformatted content starting from 1:
 
 1. Create an [AWS account](https://aws.amazon.com).
 

@@ -17,7 +17,7 @@
 
 - DoS attacks can disrupt services and harm targets in terms of time and resources. Protection is crucial to prevent accidental destruction of files and programs. Various types of DoS attacks include flooding systems, crashing TCP/IP stacks, and causing services to hang.
 
-## Tools
+## Methods
 
 #### 1. DoS and DDoS Attacks
    - SYN flooding using Metasploit.
@@ -37,7 +37,7 @@
 
 - DDoS attacks primarily target network bandwidth, exhausting resources and restricting legitimate user access. Attack vectors include volumetric attacks, protocol attacks, and application layer attacks.
 
-### Categories of Attack Vectors
+##### Categories of Attack Vectors
 
 ---
 
@@ -85,7 +85,7 @@
 
 - [hping3](https://github.com/antirez/hping) is a versatile command-line network scanning and packet crafting tool for TCP/IP protocols. It serves various purposes, including network security auditing, firewall testing, manual path MTU discovery, advanced traceroute, and more. Here, we can use hping3 to execute DOS attacks like SYN flooding, Ping of Death (POD), and UDP application layer flood attacks on a target host.
 
-## Steps
+##### Steps
 
 **On Victim machine**
 
@@ -111,11 +111,11 @@
    - Observe the captured TCP-SYN packets in Wireshark on victim machine.
    - Analyze the graphical view of captured packets by going to Statistics > I/O Graph.
 
-**Note:**
+##### Note:
 
-- SYN flooding can lead to system crashes if sustained for a long time.
-- POD attacks aim to destabilize systems with malformed or oversized packets.
-- UDP application layer flood attacks overload the victim's resources.
+- `SYN flooding` can lead to system crashes if sustained for a long time.
+- `POD attacks` aim to destabilize systems with malformed or oversized packets.
+- `UDP application layer flood attacks` overload the victim's resources.
 
 ---
 

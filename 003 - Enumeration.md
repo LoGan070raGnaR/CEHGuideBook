@@ -22,7 +22,7 @@ Enumeration creates an active connection with the system and performs directed q
 
 ---
 
-## Tools
+## Methods
 
 #### 1. NetBios Enumeration
    - Using Windows command-line utilities
@@ -320,19 +320,19 @@ LDAP enumeration tools like [Softerra LDAP Administrator](https://www.ldapadmini
 
 ##### Steps
 
-
+- To install: `sudo apt install ldap-utils`
 - Perform LDAP Enumeration with Idapsearch:
-   - Execute `Idapsearch -h [Target IP Address] -x -s base namingcontexts` to gather details related to naming contexts.
+   - Execute `ldapsearch -h [Target IP Address] -x -s base namingcontexts` to gather details related to naming contexts.
      - `-x`: Specifies simple authentication
      - `-h`: Specifies the host
      - `-s`: Specifies the scope
 
 - Retrieve Information about Primary Domain:
-   - Execute `Idapsearch -h [Target IP Address] -x -b "DC=CEH,DC=com"` to obtain more information about the primary domain.
+   - Execute `ldapsearch -h [Target IP Address] -x -b "DC=CEH,DC=com"` to obtain more information about the primary domain.
      - `-b`: Specifies the base DN for search
 
 - Retrieve Information about All Objects:
-   - Execute `Idapsearch -x -h [Target IP Address] -b "DC=CEH,DC=com" "objectclass=*"` to retrieve information related to all objects in the directory tree.
+   - Execute `ldapsearch -x -h [Target IP Address] -b "DC=CEH,DC=com" "objectclass=*"` to retrieve information related to all objects in the directory tree.
 
 - Understand Idapsearch Usage:
    - Recognize that Idapsearch is a tool used for enumerating AD users, enabling attackers to establish connections with LDAP servers and conduct searches with specific filters.
@@ -356,48 +356,31 @@ LDAP enumeration tools like [Softerra LDAP Administrator](https://www.ldapadmini
 
 ## Prerequisites
 
-Before starting this task, ensure that the NFS service is enabled on the target machine (Windows Server 2019).
+Before starting this task, ensure that the NFS service is enabled on the target machine.
 
 ## Steps
 
 - Initiate NFS Enumeration:
    - Open a Terminal window and run `nmap -p 2049 [Target IP Address]` to check NFS port (2049) status.
 
-- Use SuperEnum:
+- Use [SuperEnum](https://github.com/p4pentest/SuperEnum):
    - Navigate to SuperEnum folder using `cd SuperEnum`.
    - Create a target file with the command `echo "10.10.1.19" >> Target.txt`.
    - Run SuperEnum with `./superenum`, specifying the IP list file.
    - After the scan completes, review the results in the Terminal.
    - Observe open ports, services, and the status of NFS (port 2049).
 
-- RPCScan Enumeration:
+- [RPCScan](https://github.com/hegusung/RPCScan) Enumeration:
    - Run RPCScan with `python3 rpc-scan.py [Target IP Address] --rpc`.
    - Examine the results to identify open ports and NFS service status.
 
 ---
 
-# Perform DNS Enumeration
+### 5. DNS Enumeration
 
-## Overview
+- DNS Enumeration is a crucial step for ethical hackers and penetration testers to gather detailed information about a target domain. This process involves locating and listing all possible DNS records, providing insights into DNS server names, hostnames, machine names, usernames, IP addresses, and aliases within the target domain.
 
-DNS Enumeration is a crucial step for ethical hackers and penetration testers to gather detailed information about a target domain. This process involves locating and listing all possible DNS records, providing insights into DNS server names, hostnames, machine names, usernames, IP addresses, and aliases within the target domain.
-
-## Lab Objectives
-
-- Perform DNS enumeration using zone transfer.
-- Perform DNS enumeration using DNSSEC zone walking.
-- Perform DNS enumeration using Nmap.
-
-## Lab Environment
-
-To execute this lab, the following components are required:
-
-- Windows 11 virtual machine
-- Parrot Security virtual machine
-- Web browsers with an Internet connection
-- Administrator privileges to run the tools
-
-## DNS Enumeration Techniques
+##### DNS Enumeration Techniques
 
 DNS enumeration employs various techniques to extract information about DNS servers and network infrastructure. The key techniques include:
 
@@ -410,13 +393,9 @@ DNS enumeration employs various techniques to extract information about DNS serv
 3. **Nmap DNS Enumeration:**
    - Leverages Nmap tool to perform DNS enumeration, providing a comprehensive overview of DNS records.
 
-## Conclusion
-
-The DNS Enumeration process provides valuable insights into the target domain's infrastructure. Document the acquired information for analysis and further penetration testing.
+- The DNS Enumeration process provides valuable insights into the target domain's infrastructure. Document the acquired information for analysis and further penetration testing.
 
 ---
-
-### 5. DNS Enumeration
 
 #### DNS Enumeration using Zone Transfer
 
@@ -431,7 +410,7 @@ The DNS Enumeration process provides valuable insights into the target domain's 
      ```bash
      dig ns [Target Domain]
      ```
-   - Retrieve information about DNS name servers in the ANSWER SECTION.
+   - Retrieve information about DNS name servers in the `ANSWER SECTION`.
 
 - Attempt Zone Transfer:
    - Execute zone transfer command:
@@ -488,7 +467,7 @@ DNSSEC zone walking is a DNS enumeration technique used to obtain internal recor
    ```bash
    ./dnsrecon.py -d [Target domain] -z
    ```
-   - For example, if the target domain is [github.com](https://github.com).
+   - For example, if the target domain is github.com.
 
 - Review the result:
    - The result will display enumerated DNS records for the target domain, including SOA, NS, MX, CNAME, A, TXT, and more.
@@ -613,7 +592,7 @@ Various techniques can be employed by ethical hackers and penetration testers to
 ---
 #### Enumerate Information from Windows and Samba Hosts using Enum4linux
 
-- Enum4linux is a powerful tool designed for enumerating information from both Windows and Samba systems. It provides insights into share enumeration, password policies, remote OS identification, workgroup/domain status, user listings, group memberships, and more.
+- [Enum4linux](https://github.com/CiscoCXSecurity/enum4linux) is a powerful tool designed for enumerating information from both Windows and Samba systems. It provides insights into share enumeration, password policies, remote OS identification, workgroup/domain status, user listings, group memberships, and more.
 
 - View Enum4Linux options with `enum4linux -h`.
 

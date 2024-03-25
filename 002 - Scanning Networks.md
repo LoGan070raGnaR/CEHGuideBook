@@ -33,7 +33,7 @@
     - **Network Scanning:** Lists the active hosts and IP addresses
     - **Vulnerability Scanning:** Shows the presence of known weaknesses
 
-## Task
+## Methods
 
 Ethical hackers and pen testers use numerous tools and techniques to scan the target network.
 
@@ -42,7 +42,7 @@ Ethical hackers and pen testers use numerous tools and techniques to scan the ta
 - **Host Discovery using nmap**
 - **Host Discovery using angry IP Scanner**
 
-#### 2. Perform Port and Service Discovery
+#### 2. Port and Service Discovery
 
 - **Port and Service Discovery using megaping**
 - **Port and Service Discovery using NetScanTools Pro**
@@ -50,7 +50,7 @@ Ethical hackers and pen testers use numerous tools and techniques to scan the ta
 - **Explore Various Network Scanning Techniques using Nmap**
 - **Explore Various Network Scanning Techniques using Hping3**
 
-#### 3. Perform OS Discovery
+#### 3. OS Discovery
 
 - **Identify the Target System's OS with Time-to-Live (TTL) and TCP Window Sizes using Wireshark**
 - **OS Discovery using Nmap Script Engine (NSE)**
@@ -80,7 +80,7 @@ Ethical hackers and pen testers use numerous tools and techniques to scan the ta
     - TCP ping scan (TCP SYN ping and TCP ACK ping)
     - IP protocol ping scan
 
-#### Host Discovery using Nmap
+#### Perform Host Discovery using Nmap
 
 - Nmap is a utility used for network discovery, network administration, and security auditing. It is also used to perform tasks such as network inventory, managing service upgrade schedules, and monitoring host or service uptime. Here, we will use Nmap to discover a list of live hosts in the target network using various host discovery techniques.
 
@@ -128,7 +128,7 @@ Ethical hackers and pen testers use numerous tools and techniques to scan the ta
 
     - **IPv6 Scanning**
 
-#### Port Scanning using sx Tool
+#### Perform Port Scanning using sx Tool
 
 - The `sx` tool is a command-line network scanner that can be used to perform ARP scans, ICMP scans, TCP SYN scans, UDP scans, and application scans such as SOCS5 scan, Docker scan, and Elasticsearch scan.
 
@@ -167,12 +167,12 @@ Ethical hackers and pen testers use numerous tools and techniques to scan the ta
 
 - Nmap comes with various inbuilt scripts that can be employed during a scanning process to find open ports and services running on the target. It sends specially crafted packets to the target host and analyzes the responses to achieve its goal. Nmap includes various port scanning mechanisms (TCP and UDP), OS detection, version detection, ping sweeps, etc.
 
-- In [Zenmap](https://www.kali.org/tools/zenmap-kbx/), type the command `nmap -ST -v [Target IP Address]` (replace [Target IP Address] with the actual target IP, e.g., 10.10.1.22) and click Scan.
+- In [Zenmap](https://www.kali.org/tools/zenmap-kbx/), type the command `nmap -sT -v [Target IP Address]` (replace [Target IP Address] with the actual target IP, e.g., 10.10.1.22) and click Scan.
 
    ```bash
-   nmap -ST -v 10.10.1.22
+   nmap -sT -v 10.10.1.22
    ```
-   - `-ST`: performs the TCP connect/full open scan.
+   - `-sT`: performs the TCP connect/full open scan.
    - `-v`: enables verbose output (includes all hosts and ports in the output).
 
 - View the scan results displaying open TCP ports and services running on the target machine.
@@ -305,7 +305,7 @@ Parameters like TTL and TCP window size in the IP header's first packet in a TCP
 
 - **Interpret TTL Values:** A TTL value of 128 suggests a Windows-based machine. A TTL value of 64 suggests a Linux-based machine.
 
-#### OS Discovery using Nmap Script Engine (NSE)
+#### Perform OS Discovery using Nmap Script Engine (NSE)
 
 - Nmap, along with Nmap Script Engine (NSE), is a powerful tool for extracting valuable information from the target system. NSE provides scripts that reveal useful details such as OS, computer name, domain name, and more.
 
@@ -321,7 +321,7 @@ Parameters like TTL and TCP window size in the IP header's first packet in a TCP
 - In summary, the aggressive scan is an all-encompassing scan that provides a wide range of information, the OS discovery scan specifically focuses on identifying the operating system, and the SMB OS discovery utilizes scripts for OS discovery using the SMB protocol.
 
 ---
-#### OS Discovery using Unicornscan
+#### Perform OS Discovery using Unicornscan
 
 - Unicornscan is a Linux-based command line-oriented network information-gathering and reconnaissance tool. It is an asynchronous TCP and UDP port scanner and banner grabber that enables you to discover open ports, services, TTL values, etc. running on the target machine. In Unicornscan, the OS of the target machine can be identified by observing the TTL values in the acquired scan result.
 
@@ -426,7 +426,7 @@ Parameters like TTL and TCP window size in the IP header's first packet in a TCP
 
 - CyberGhost VPN hides the attacker's IP and replaces it with a selected IP, allowing for anonymous surfing and access to blocked content. It encrypts the connection and does not keep logs, ensuring data security.
 
-### 5. Network Scanning using Various Scanning Tools
+### 5. Perform Network Scanning using Various Scanning Tools
 
 - The information obtained in the previous steps might be insufficient to reveal potential vulnerabilities in the target network; there may be more information available that could help in finding loopholes. As an ethical hacker and pen tester, you should look for as much information as possible about systems in the target network using various network scanning tools when needed.
 
@@ -447,7 +447,7 @@ Parameters like TTL and TCP window size in the IP header's first packet in a TCP
 
 - Restart PostgreSQL with `service postgresql restart` and relaunch Metasploit.
 
-- Scan the target subnet (e.g., `nmap -Pn -ss -A -oX Test 10.10.1.0/24`).
+- Scan the target subnet (e.g., `nmap -Pn -sS -A -oX Test 10.10.1.0/24`).
 
 - Import the Nmap results into the database with `db_import Test`.
 

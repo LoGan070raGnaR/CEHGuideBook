@@ -18,7 +18,7 @@ The objective is to evade IDS, firewalls, and perform tasks such as:
 
 - Intrusion Detection Systems (IDSs) provide an additional layer of security but are attractive targets for attackers. Attackers employ various evasion techniques to bypass IDS and compromise infrastructure. Firewalls operate based on predefined rules, and attackers can bypass them with extensive knowledge and skill using various techniques. Evasion methods trick firewalls into not filtering generated malicious traffic.
 
-## Tools
+## Methods
 
 #### 1. Intrusion Detection
 
@@ -103,7 +103,7 @@ The objective is to evade IDS, firewalls, and perform tasks such as:
    - Execute a Ping Sweep scan on the subnet: `nmap -sP 10.10.1.0/24`.
 
 - **Zombie Scan:**
-   - Perform a Zombie Scan using another machine as the Zombie: `nmap -sl 10.10.1.22 10.10.1.11`.
+   - Perform a Zombie Scan using another machine as the Zombie: `nmap -sI 10.10.1.22 10.10.1.11`.
 
 ---
 
@@ -111,7 +111,7 @@ The objective is to evade IDS, firewalls, and perform tasks such as:
 
 - Antivirus software aims to identify and prevent the execution of malicious processes or files on endpoints. Here, we are modifying Metasploit templates to bypass antivirus detection, allowing the execution of malicious processes on the target machine.
 
-### Steps
+##### Steps
 
 - Generate a payload using msfvenom:
    ```bash
