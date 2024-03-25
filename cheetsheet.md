@@ -18,7 +18,7 @@
 
 ---
 
-# Service Enumeration:
+# Service Enumeration
 
 ## Services
 
