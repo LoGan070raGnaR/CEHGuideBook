@@ -33,22 +33,22 @@
 - FTP (File Transfer Protocol) is a network protocol for transmitting files between computers over TCP/IP connections.
 
 - Commands
-	- nmap -sC -p 21 <IP>
+	- `nmap -sC -p 21 <IP>`
 	- connecting target ftp service
-		- ftp <IP>
+		- `ftp <IP>`
 	- brute forcing ftp login
-		- hydra -L userlist.txt -P passwordlist.txt <IP> ftp
+		- `hydra -L userlist.txt -P passwordlist.txt <IP> ftp`
 	- Login to victim machine
-		- ftp <IP>
-		- get <file>
+		- `ftp <IP>`
+			- `get <file>`
 
-### SNMP
+### SNMP (161)
 
 - SNMP protocol is used to monitor and manage network devices like PCs, Routers, Switches, Servers, etc.
 - Tools used to enumerate
-	- nmap
-	- snmp-check
-	- metasploit
+	- `nmap`
+	- `snmp-check`
+	- `metasploit`
 - What to enumerate?
 	- default UDP port used by SNMP
 	- identify the processes running on the target machine using nmap scrips
@@ -56,14 +56,13 @@
 	- list valid community strings of the server by using snmp_login metasploit module.
 	- list all the interfaces of the machine. use appropriate nmap scripts
 - Default UDP port
-	- nmap -sU <IP>
+	- `nmap -sU <IP>`
 	- Using snmp-check
-		- snmp-check <IP>
-- identify process (using nse)
-	- https://nmap.org/nsedoc/scripts/
-	- nmap -sU -p 161 --script=snmp-processes <target>
+		- `snmp-check <IP>`
+- identify process (using [nse](https://nmap.org/nsedoc/scripts/))
+	- `nmap -sU -p 161 --script=snmp-processes <target>`
 - list valid community strings (using nse)
-	- nmap -sU --script snmp-brute <target> [--script-args snmp-brute.communitiesdb=<wordlist> ]
+	- `nmap -sU --script snmp-brute <target> [--script-args snmp-brute.communitiesdb=<wordlist> ]`
 - list valid community strings (metasploit)
 	- search snmp
 	- use auxiliary/scanner/snmp/snmp_login
@@ -71,9 +70,9 @@
 	- exploit
 		- we will get 2 public strings (private and public)
 - all the interfaces of the machine (using nse)
-	- nmap -sU -p 161 --script=snmp-interfaces <target>
+	- `nmap -sU -p 161 --script=snmp-interfaces <target>`
 
-### SMB
+### SMB (445)
 
 - Network file sharing protocol that allows applications on a computer to read and write to files.
 - Request services from server programs in a computer network.
@@ -86,33 +85,33 @@
 
 - network file shares
 	- service enumeration
-		- nmap <IP>
-		- nmap --script smb-enum-shares.nse -p445 <host>
-		- sudo nmap -sU -sS --script smb-enum-shares.nse -p U:137,T:139 <host>
+		- `nmap <IP>`
+		- `nmap --script smb-enum-shares.nse -p445 <host>`
+		- `sudo nmap -sU -sS --script smb-enum-shares.nse -p U:137,T:139 <host>`
 
 	- connect to smb (gui method)
-		- smb://<IP>/<path-name>
+		- `smb://<IP>/<path-name>`
 		- if you don't know the password use hydra to bruteforce
 
 - logged in users details
-	- nmap --script smb-enum-users.nse -p445 <host>
-	- sudo nmap -sU -sS --script smb-enum-users.nse -p U:137,T:139 <host>
+	- `nmap --script smb-enum-users.nse -p445 <host>`
+	- `sudo nmap -sU -sS --script smb-enum-users.nse -p U:137,T:139 <host>`
 
 - workgroups
-	- nmap --script smb-enum-groups.nse -p445 <host>
-	- sudo nmap -sU -sS --script smb-enum-groups.nse -p U:137,T:139 <host>
-	- nmap -p 445 --script smb-enum-groups --script-args smbusername=<user>,smbpassword=<password> <IP>
+	- `nmap --script smb-enum-groups.nse -p445 <host>`
+	- `sudo nmap -sU -sS --script smb-enum-groups.nse -p U:137,T:139 <host>`
+	- `nmap -p 445 --script smb-enum-groups --script-args smbusername=<user>,smbpassword=<password> <IP>`
 
 - security level information
-	- nmap -sC -sV -A -T4 -p 445 <IP>
+	- `nmap -sC -sV -A -T4 -p 445 <IP>`
 
 - domain and services
-	- nmap --script smb-enum-domains.nse -p445 <host>
-	- sudo nmap -sU -sS --script smb-enum-domains.nse -p U:137,T:139 <host>
+	- `nmap --script smb-enum-domains.nse -p445 <host>`
+	- `sudo nmap -sU -sS --script smb-enum-domains.nse -p U:137,T:139 <host>`
 
-	- nmap --script smb-enum-services.nse -p445 <host>
-	- nmap --script smb-enum-services.nse --script-args smbusername=<username>,smbpass=<password> -p445 <host>
-	- nmap -p 445 --script smb-enum-services --script-args smbusername=<user>,smbpassword=<password> <IP>
+	- `nmap --script smb-enum-services.nse -p445 <host>`
+	- `nmap --script smb-enum-services.nse --script-args smbusername=<username>,smbpass=<password> -p445 <host>`
+	- `nmap -p 445 --script smb-enum-services --script-args smbusername=<user>,smbpassword=<password> <IP>`
 
 ### RDP (3389)
 
@@ -124,7 +123,7 @@
 	- use and RDP tools to login into the victim's machine
 
 - find port running RDP
-	- nmap <IP>
+	- `nmap <IP>`
 - confirm port running RDP services
 	- msfconsole
 	- search rdp
@@ -134,23 +133,23 @@
 	- set RPORT <suspect-port>
 	- exploit
 - bruteforce rdp login credentials
-	- hydra -L usernamelist.txt -P passwordlist.txt rdp://<IP> -s <rdp-port>
+	- `hydra -L usernamelist.txt -P passwordlist.txt rdp://<IP> -s <rdp-port>`
 - Using Xfreerdp to create rdp session
-	- xfreerdp /u:<username> /p:<password> /v:<target-ip>:<rdp-port>
+	- `xfreerdp /u:<username> /p:<password> /v:<target-ip>:<rdp-port>`
 
 ### NetBIOS Enumeration (137/138/139)
 
-- NBName: 137/UDP
-- NBName: 137/TCP
-- NBDatagram: 138/UDP
-- NBSession: 139/TCP
+- `NBName: 137/UDP`
+- `NBName: 137/TCP`
+- `NBDatagram: 138/UDP`
+- `NBSession: 139/TCP`
 - Network Basic Input Output System
 - Facilitates and allow computer to connect over the local network, access shared resources, such as files and printers, and to find each other.
 
 - basic
-	- nmap -sP <IP>
+	- `nmap -sP <IP>`
 - using nse
-	- sudo nmap -sU --script nbstat.nse -p137 <host>
+	- `sudo nmap -sU --script nbstat.nse -p137 <host>`
 		- we can know the "workgroup" of the ip address using netbios enumeration (e.g., ECLABS)
 
 ---
@@ -169,16 +168,16 @@
 - DDoS Attack
 
 - DoS attack (SYN - SYN/ACK)
-	- filter - tcp.flags.syn==1
+	- filter - `tcp.flags.syn==1`
 - Follow Streams (TCP/HTTP)
-	- right click on packet - Follow -> TCP/HTTP Stream
-	- HTTP stream (tcp.stream eq 0) (red [us], blue [response from serveer])
-	- TCP stream (tcp.stream eq 0)
+	- right click on packet - `Follow` -> `TCP/HTTP Stream`
+	- HTTP stream (`tcp.stream eq 0`) (`red` [us i.e., client], `blue` [response from server])
+	- TCP stream (`tcp.stream eq 0`)
 	- You can use shortcut on bottom right corner (stream [0,1,2, etc.])
 		- follow the stream you will find some useful info.
 
 - To find text file - extracting files
-	- File -> Export Objects -> HTTP
+	- `File` -> `Export Objects` -> `HTTP`
 		- check "Content Type" and save the file
 
 - Tip
@@ -187,7 +186,7 @@
 		- also SHA hashes
 
 - To find specific strings (to find specific regex)
-	- ctrl+f (search e.g., ceh{ )
+	- `ctrl+f` (search e.g., ceh{ )
 
 - DOS attack
 	- To filter different IP that are performing DOS attack
@@ -210,20 +209,20 @@
 ### SNOW
 - Hiding/extracting data - text file
 - To hide:
-	- SNOW.EXE -C -m "20/20 in CEH practical" -p "pa$$word" secret.txt hiddnesecrect.txt
+	- `SNOW.EXE -C -m "20/20 in CEH practical" -p "pa$$word" secret.txt hiddnesecrect.txt`
 		- note: secret.txt (original file) & hiddensecret.txt (hiddne file)
 - To extract:
-	-SNOW.EXE -C -p "pa$$word" hiddensecret.txt
+	-`SNOW.EXE -C -p "pa$$word" hiddensecret.txt`
 
 ### Openstego
 - Hiding/Extracting Data - image file
 
 - To Hide:
-	- In Openstego, Data hiding -> Hide data
-		- choose message file & cover image and output stego file -> hide data
+	- In Openstego, `Data hiding` -> `Hide data`
+		- choose message file & cover image and output stego file -> `hide data`
 - To Extract data
-	- Data hiding -> Extract data
-		- choose input stego file & output folder for message file -> extract data
+	- `Data hiding` -> `Extract data`
+		- choose input stego file & output folder for message file -> `extract data`
 
 ### Covert TCP
 
@@ -234,11 +233,11 @@
 	- we send the data in the left out spaces present in the header 1 Byte at a time.
 
 - Commands
-	- cc -o covert_tcp covert_tcp.c
+	- `cc -o covert_tcp covert_tcp.c`
 	- for receiving/listening
-		- ./covert_tcp -dest <Dest-IP> -source <Source-IP> -source_port 9999 -dest_port 8888 -server -file /path/to/file.txt
+		- `./covert_tcp -dest <Dest-IP> -source <Source-IP> -source_port 9999 -dest_port 8888 -server -file /path/to/file.txt`
 	- for sending
-		- ./covert_tcp -dest <Dest-IP> -source <Source-IP> -source_port 8888 -dest_paort 9999 -file /path/to/file.txt
+		- `./covert_tcp -dest <Dest-IP> -source <Source-IP> -source_port 8888 -dest_paort 9999 -file /path/to/file.txt`
 
 
 ---
@@ -271,9 +270,9 @@
 - For encrypting/decrypting files
 
 - To encrypt:
-    - right click on file -> Encrypt -> Enter `Passphrase`
+    - right click on file -> `Encrypt` -> Enter `Passphrase`
 - To decrypt:
-    - right click on encrypted file -> Decrypt -> Enter `Passphrase`
+    - right click on encrypted file -> `Decrypt` -> Enter `Passphrase`
     - it may contain hashes, to decrypt it go to [Hashes](https://hashes.com/en/decrypt/hash)
 
 ### BcTextEncoder
@@ -350,29 +349,36 @@
 
 ### SQLMap
 
+```bash
 sqlmap -r <get-request-file> --dbs
 sqlmap -r <get-request-file> -D dvwa
 sqlmap -r <get-request-file> -D dvwa --tables
 sqlmap -r <get-request-file> -D dvwa --tables --colums
 sqlmap -r <get-request-file> -D dvwa --dump
+```
 
 ## WPScan
 
+```bash
 wpscan --url http://10.10.208.164/ --enumerate u
+```
 
 ## ADB
 
+```bash
 adb devices
 adb connect <IP>:5555
-
+```
 - first find out which ip is a android device while enumerating using nmap (can determine OS of each devices)
 - or simply bruteforce among which ip is android device
 	e.g.,
-	- adb connect 1.1.1.1:5555
-	- adb connect 1.1.1.2:5555
-	- adb connect 1.1.1.3:5555 etc.
+	- `adb connect 1.1.1.1:5555`
+	- `adb connect 1.1.1.2:5555`
+	- `adb connect 1.1.1.3:5555` etc.
 
+```bash
 adb shell
+```
 	- ls
 	- whoami (shell)
 	- cd sdcard/
@@ -388,24 +394,27 @@ adb shell
 - Vulnerability Analysis
 - Privilege Escalation
 
-# Updated topics
+## Updated topics
 
 - packet analysis
 - mobile devices
 - wireless networks
 
-# What one must be aware of?
+## What one must be aware of?
 
 - some servers are very slow
 - provided wordlist doesn't work for some questions
 
 ---
 
-ssh user-name@<IP> -p <PORT>
-	- how to know the user and password?
-		- you will be provided with checklist/wordlist
-		- from previous question you have identified credentils
-		- bruteforce credentials using hydra
+# Privilage Escalation
+
+`ssh user-name@<IP> -p <PORT>`
+
+- how to know the user and password?
+	- you will be provided with checklist/wordlist
+	- from previous question you have identified credentils
+	- bruteforce credentials using hydra
 
 - To escalate
 	- always check previlage level
@@ -429,11 +438,11 @@ ssh user-name@<IP> -p <PORT>
 - another thing to remember
 	- if we have the authority to change 'authorized_keys' of a root user as a normal user (not root user)
 	- if you have the permission, first create new public and private ssh key in your local machine, and copy 'authorized_key' to the victim machine, through that you can successfully login.
-		ssh-keygen -f key
-			- you will get `key` and `key.pub`
-			- copy "public key" to /root/.ssh/
-			- now you can ssh into root user with your own private key
-		ssh root@<IP> -p <PORT> -i key
+	- `ssh-keygen -f key`
+		- you will get `key` and `key.pub`
+		- copy "public key" to /root/.ssh/
+		- now you can ssh into root user with your own private key
+	- `ssh root@<IP> -p <PORT> -i key`
 
 ---
 
@@ -460,10 +469,10 @@ ssh user-name@<IP> -p <PORT>
 ---
 
 - To display file or file system status
-	stat -c "%a %A  %U %G %F" *
+	`stat -c "%a %A  %U %G %F" *`
 
 - To check user in which group
-	groups <user-name>
+	`groups <user-name>`
 
 - Have some thought process.
 	- sometimes one file with root privilages can have dipendencies on other files (so we can modify that other file which we have access)
@@ -487,7 +496,7 @@ ssh user-name@<IP> -p <PORT>
 
 ---
 
-- use `LinEnum` (https://github.com/rebootuser/LinEnum) or use 'LinPEASE' (https://github.com/carlospolop/PEASS-ng)
+- use `LinEnum` (https://github.com/rebootuser/LinEnum) or use '`LinPEASE`' (https://github.com/carlospolop/PEASS-ng)
 
 ---
 
@@ -515,11 +524,11 @@ ssh user-name@<IP> -p <PORT>
 
 ## Tool List (RAT)
 
-- njRAT
-- MoSucker
-- ProRAT
-- Theef
-- HTTP RAT
+- `njRAT`
+- `MoSucker`
+- `ProRAT`
+- `Theef`
+- `HTTP RAT`
 
 - how you can use this tool to connect to the remote machine, find the file and get the flag.
 	- process is same for all the tools, only GUI is different.
