@@ -113,6 +113,10 @@
 	- `nmap --script smb-enum-services.nse --script-args smbusername=<username>,smbpass=<password> -p445 <host>`
 	- `nmap -p 445 --script smb-enum-services --script-args smbusername=<user>,smbpassword=<password> <IP>`
 
+nmap -p139,445 --script smb-enum-shares.nse 192.168.0.0/24
+hydra -l user -P password_list.txt smb://192.168.0.X
+smbclient //192.168.0.X/share_name -U User%password
+
 ### RDP (3389)
 
 - protocol used for remotely accessing the computers
@@ -495,7 +499,7 @@ adb shell
 
 ---
 
-#### Tips: 
+#### Tips:
 
 - use `LinEnum` (https://github.com/rebootuser/LinEnum) or use '`LinPEASE`' (https://github.com/carlospolop/PEASS-ng)
 
@@ -557,5 +561,25 @@ adb shell
     - `Other tools (HTTP RAT, ProRAT, Theef)` - You need to provide the `IP` address and `Port` number of the victim machine (works on a concept that is similar to bind shell - Here Victim machine is listening and we are connecting)
 
 - Try to connect with machines having OS as Windows. After enumerating those systems try to check that on which port some other services are running apart from standard service configuration
+
+---
+
+nmap -sV --script=vulscan/vulscan.nse <IP> - vulnerability score
+
+---
+
+https://tryhackme.com/module/learn-burp-suite
+https://tryhackme.com/room/furthernmap
+https://tryhackme.com/r/room/services
+https://tryhackme.com/r/room/networkservices
+https://tryhackme.com/r/room/networkservices2
+https://tryhackme.com/room/enumerationpe
+https://tryhackme.com/r/room/wireshark
+https://tryhackme.com/r/room/protocolsandservers2
+https://tryhackme.com/r/room/wifihacking101
+https://tryhackme.com/r/room/sqlmap
+https://tryhackme.com/r/room/gamezone
+https://tryhackme.com/r/room/webenumerationv2
+https://tryhackme.com/r/room/easypeasyctf
 
 ---
