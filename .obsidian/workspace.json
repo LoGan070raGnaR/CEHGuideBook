@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "cheetsheet.md",
+                "file": "005 - System Hacking.md",
                 "mode": "preview",
                 "source": false
               }
@@ -65,7 +65,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "cheetsheet.md",
+                "file": "005 - System Hacking.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "cheetsheet.md",
+                "file": "005 - System Hacking.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "cheetsheet.md"
+                "file": "005 - System Hacking.md"
               }
             }
           }
@@ -146,18 +147,20 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "34dc36941dee4939",
+  "active": "f632d7b33d9da4bc",
   "lastOpenFiles": [
-    "README.md",
+    "004 - Vulnerability Analysis.md",
+    "003 - Enumeration.md",
+    "013 - Hacking Web Applications.md",
+    "012 - Hacking Web Servers.md",
     "cheetsheet.md",
+    "README.md",
     "019- Cryptography.md",
     "018 - Cloud Computing.md",
     "017 - IOT and OT Hacking.md",
     "016 - Hacking Mobile Platforms.md",
     "015 - Hacking Wireless Networks.md",
     "014 - SQL Injection.md",
-    "013 - Hacking Web Applications.md",
-    "012 - Hacking Web Servers.md",
     "011 - Evading IDS, Firewalls, and Honeypots.md",
     "010 - Session Hijacking.md",
     "009 - Denial-of-Service.md",
@@ -165,8 +168,6 @@
     "007 - Sniffing.md",
     "006 - Malware Threats.md",
     "005 - System Hacking.md",
-    "004 - Vulnerability Analysis.md",
-    "003 - Enumeration.md",
     "002 - Scanning Networks.md",
     "001 - Footprinting and Reconnaissance.md"
   ]
