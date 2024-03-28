@@ -568,19 +568,19 @@ adb shell
 
 # Recommeded THM Rooms
 
-[Burp Suite - Module](https://tryhackme.com/module/learn-burp-suite)
-[Nmap](https://tryhackme.com/room/furthernmap)
-[Services](https://tryhackme.com/r/room/services)
-[Network Services](https://tryhackme.com/r/room/networkservices)
-[Network Services 2](https://tryhackme.com/r/room/networkservices2)
-[Enumeration](https://tryhackme.com/room/enumerationpe)
-[Wireshark 101](https://tryhackme.com/r/room/wireshark)
-[Protocols and Servers](https://tryhackme.com/r/room/protocolsandservers)
-[Protocols and Servers 2](https://tryhackme.com/r/room/protocolsandservers2)
-[Wifi Hacking 101](https://tryhackme.com/r/room/wifihacking101)
-[SQLMAP](https://tryhackme.com/r/room/sqlmap)
-[Game Zone](https://tryhackme.com/r/room/gamezone)
-[Web Enumeration](https://tryhackme.com/r/room/webenumerationv2)
-[Easy Peasy](https://tryhackme.com/r/room/easypeasyctf)
+- [Burp Suite - Module](https://tryhackme.com/module/learn-burp-suite)
+- [Nmap](https://tryhackme.com/room/furthernmap)
+- [Services](https://tryhackme.com/r/room/services)
+- [Network Services](https://tryhackme.com/r/room/networkservices)
+- [Network Services 2](https://tryhackme.com/r/room/networkservices2)
+- [Enumeration](https://tryhackme.com/room/enumerationpe)
+- [Wireshark 101](https://tryhackme.com/r/room/wireshark)
+- [Protocols and Servers](https://tryhackme.com/r/room/protocolsandservers)
+- [Protocols and Servers 2](https://tryhackme.com/r/room/protocolsandservers2)
+- [Wifi Hacking 101](https://tryhackme.com/r/room/wifihacking101)
+- [SQLMAP](https://tryhackme.com/r/room/sqlmap)
+- [Game Zone](https://tryhackme.com/r/room/gamezone)
+- [Web Enumeration](https://tryhackme.com/r/room/webenumerationv2)
+- [Easy Peasy](https://tryhackme.com/r/room/easypeasyctf)
 
 ---
