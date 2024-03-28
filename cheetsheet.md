@@ -113,9 +113,11 @@
 	- `nmap --script smb-enum-services.nse --script-args smbusername=<username>,smbpass=<password> -p445 <host>`
 	- `nmap -p 445 --script smb-enum-services --script-args smbusername=<user>,smbpassword=<password> <IP>`
 
+```bash
 nmap -p139,445 --script smb-enum-shares.nse 192.168.0.0/24
 hydra -l user -P password_list.txt smb://192.168.0.X
 smbclient //192.168.0.X/share_name -U User%password
+```
 
 ### RDP (3389)
 
@@ -564,22 +566,21 @@ adb shell
 
 ---
 
-nmap -sV --script=vulscan/vulscan.nse <IP> - vulnerability score
+# Recommeded THM Rooms
 
----
-
-https://tryhackme.com/module/learn-burp-suite
-https://tryhackme.com/room/furthernmap
-https://tryhackme.com/r/room/services
-https://tryhackme.com/r/room/networkservices
-https://tryhackme.com/r/room/networkservices2
-https://tryhackme.com/room/enumerationpe
-https://tryhackme.com/r/room/wireshark
-https://tryhackme.com/r/room/protocolsandservers2
-https://tryhackme.com/r/room/wifihacking101
-https://tryhackme.com/r/room/sqlmap
-https://tryhackme.com/r/room/gamezone
-https://tryhackme.com/r/room/webenumerationv2
-https://tryhackme.com/r/room/easypeasyctf
+[Burp Suite - Module](https://tryhackme.com/module/learn-burp-suite)
+[Nmap](https://tryhackme.com/room/furthernmap)
+[Services](https://tryhackme.com/r/room/services)
+[Network Services](https://tryhackme.com/r/room/networkservices)
+[Network Services 2](https://tryhackme.com/r/room/networkservices2)
+[Enumeration](https://tryhackme.com/room/enumerationpe)
+[Wireshark 101](https://tryhackme.com/r/room/wireshark)
+[Protocols and Servers](https://tryhackme.com/r/room/protocolsandservers)
+[Protocols and Servers 2](https://tryhackme.com/r/room/protocolsandservers2)
+[Wifi Hacking 101](https://tryhackme.com/r/room/wifihacking101)
+[SQLMAP](https://tryhackme.com/r/room/sqlmap)
+[Game Zone](https://tryhackme.com/r/room/gamezone)
+[Web Enumeration](https://tryhackme.com/r/room/webenumerationv2)
+[Easy Peasy](https://tryhackme.com/r/room/easypeasyctf)
 
 ---
